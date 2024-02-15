@@ -31,7 +31,8 @@
                         HorizontalOptions="Start"
                         />
 
-                    <Border 
+                    <Border
+                        Padding="0,0,3,0"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -58,6 +59,7 @@
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
                         WidthRequest="90"
+                        
                         />
 
                     </Border>
@@ -67,9 +69,9 @@
                           Margin="0,30,0,0"
                           >
                         <Border HeightRequest="600"
-                                StrokeThickness="1.5"
+                                StrokeThickness="2"
                                 >
-                        <Border.Stroke>
+                        <Border.Stroke >
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStopCollection>
                                     <GradientStop Offset="0" Color="#054B53"/>
@@ -89,7 +91,8 @@
                             VerticalOptions="FillAndExpand"
                             Aspect="AspectFill"
                             Opacity="0.8"
-                            Margin="-230,0,0,0"/>  
+                            Margin="0,0,0,0"
+                                />  
                         
                     </Border>
                     </Grid>

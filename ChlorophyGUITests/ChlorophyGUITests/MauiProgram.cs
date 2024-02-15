@@ -15,7 +15,6 @@ namespace ChlorophyGUITests
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("bloomings.otf", "bloomings");
                     fonts.AddFont("futurabook.ttf", "futurabook");
-                    fonts.AddFont("futurabookitalic.ttf", "futurabookitalic");
                 });
 
 #if DEBUG

@@ -57,18 +57,15 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\bloomings.otf" />
-	  <None Remove="Resources\Fonts\FUTURA BOOK FONT.TTF" />
-	  <None Remove="Resources\Fonts\FUTURA BOOK ITALIC FONT.TTF" />
-	  <None Remove="Resources\Fonts\futurabook.ttf" />
-	  <None Remove="Resources\Fonts\futurabookitalic.ttf" />
+		<None Remove="Resources\Fonts\futurabook.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
+	  <None Remove="Resources\Images\succulents.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <MauiFont Include="Resources\Fonts\bloomings.otf" />
 	  <MauiFont Include="Resources\Fonts\futurabook.ttf" />
-	  <MauiFont Include="Resources\Fonts\futurabookitalic.ttf" />
 	  <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
 	  <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
 	</ItemGroup>
