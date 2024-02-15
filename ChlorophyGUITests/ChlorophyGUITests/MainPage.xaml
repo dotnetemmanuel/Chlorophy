@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChlorophyGUITests.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#E6F8F7">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="10"
+            Spacing="25">
+            <Grid RowDefinitions="*, *, *">
+                <Grid 
+                    Grid.Row="0"
+                    ColumnDefinitions="*, *,  *">
+                    <Image 
+                        Grid.Column="0"
+                        Source="chlorophy_logo_svg.png"
+                        HeightRequest="45"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"/>
+                    
+                    <Label
+                        Grid.Column="1"
+                        x:Name="Chlorophy"
+                        Text="Chlorophy"
+                        TextColor="#054B53"
+                        FontSize="22"
+                        FontFamily="bloomings"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        />
+
+                    <Border 
+                        Grid.Column="2"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        BackgroundColor="Transparent"
+                        HeightRequest="30">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+
+                        <Entry
+                        Grid.Column="2"
+                        x:Name="Search"
+                        Placeholder="Search"
+                        PlaceholderColor="#BFBFBF"
+                        BackgroundColor="#FFFFFF"
+                        FontSize="11"
+                        FontFamily="futurabook"
+                        TextColor="#383838"
+                        VerticalTextAlignment="Start"
+                            HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        WidthRequest="90"
+                        />
+
+                    </Border>
+                    </Grid>
+                
+                    <Grid Grid.Row="1"
+                          Margin="0,30,0,0"
+                          >
+                        <Border HeightRequest="600"
+                                StrokeThickness="1.5"
+                                >
+                        <Border.Stroke>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStopCollection>
+                                    <GradientStop Offset="0" Color="#054B53"/>
+                                    <GradientStop Offset="1" Color="#F7D984"/>
+                                </GradientStopCollection>
+                                
+                                
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+                            
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15"/>
+                        </Border.StrokeShape>
+                        
+                            <Image
+                            Source="succulents.jpg"
+                            VerticalOptions="FillAndExpand"
+                            Aspect="AspectFill"
+                            Opacity="0.8"
+                            Margin="-230,0,0,0"/>  
+                        
+                    </Border>
+                    </Grid>
+                
+            </Grid>
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
