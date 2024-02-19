@@ -5,30 +5,36 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E6F8F7">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="10"
-            Spacing="25">
-            <Grid RowDefinitions="*, *, *">
+
+    <Grid>
+        <Grid
+            Padding="20, 20, 20, 20"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+               RowDefinitions="Auto, *, Auto">
+
                 <Grid 
                     Grid.Row="0"
-                    ColumnDefinitions="*, *,  *">
+                    ColumnDefinitions="Auto, *, *"
+                    HorizontalOptions="FillAndExpand">
                     <Image 
                         Grid.Column="0"
                         Source="chlorophy_logo_svg.png"
                         HeightRequest="45"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"/>
-                    
+
                     <Label
                         Grid.Column="1"
                         x:Name="Chlorophy"
                         Text="Chlorophy"
                         TextColor="#054B53"
-                        FontSize="22"
+                        FontSize="26"
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
+                        Margin="20, 0, 0, 0"
                         />
 
                     <Border
@@ -55,52 +61,107 @@
                         FontFamily="futurabook"
                         TextColor="#383838"
                         VerticalTextAlignment="Start"
-                            HorizontalTextAlignment="End"
+                        HorizontalTextAlignment="End"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        WidthRequest="90"
-                        
-                        />
-
+                        WidthRequest="85"
+                        Completed="OnSearchCompleted"/>
                     </Border>
-                    </Grid>
-                
-                    <Grid Grid.Row="1"
-                          Margin="0,30,0,0"
-                          >
-                        <Border HeightRequest="600"
-                                StrokeThickness="2"
-                                >
+                </Grid>
+
+                <Grid 
+                    Grid.Row="1"
+                    Margin="0, 15, 0, 0">
+                    <Border 
+                        StrokeThickness="2">
+
                         <Border.Stroke >
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStopCollection>
                                     <GradientStop Offset="0" Color="#054B53"/>
+                                    <GradientStop Offset="0.25" Color="#3F8668"/>
+                                    <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                    <GradientStop Offset="0.75" Color="#BED082"/>
                                     <GradientStop Offset="1" Color="#F7D984"/>
                                 </GradientStopCollection>
-                                
-                                
                             </LinearGradientBrush>
                         </Border.Stroke>
-                            
+
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15"/>
                         </Border.StrokeShape>
-                        
-                            <Image
+
+                        <Image
                             Source="succulents.jpg"
                             VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
                             Aspect="AspectFill"
-                            Opacity="0.8"
-                            Margin="0,0,0,0"
-                                />  
-                        
+                            Opacity="0.8"/>
                     </Border>
-                    </Grid>
-                
+
+                    <Frame
+                        x:Name="Welcome"    
+                        BackgroundColor="#FFFFFF"
+                        Margin="20, 20, 20, 0"
+                        HeightRequest="100"
+                        VerticalOptions="Start"
+                        BorderColor="Transparent"
+                        IsVisible="True">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label 
+                                Grid.Row="0"
+                                Text="Welcome, Emmanuel!"
+                                TextColor="#054B53"
+                                FontSize="18"
+                                FontFamily="bloomings"
+                                VerticalOptions="Start"/>
+
+                            <Label
+                            Grid.Row="1"
+                            Text="Get started by searching for a plant and adding it to your list!"
+                            TextColor="#054B53"
+                            FontSize="13"
+                            FontFamily="futurabook"
+                            VerticalOptions="End"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="2">
+
+                    <ImageButton 
+                        Source="home.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0, 0"
+                        Clicked="OnHomeClicked"/>
+                    
+                    <ImageButton
+                        Source="user.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0 , 0"
+                        Clicked="OnUserClicked"/>
+                </Grid>
             </Grid>
+        </Grid>
 
-            
-        </VerticalStackLayout>
-    </ScrollView>
-
+        <ContentView >
+            <Frame  Margin="19"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent"
+                    Opacity=".75"
+                    IsVisible="True">
+            </Frame>
+        </ContentView>
+    </Grid>
 </ContentPage>

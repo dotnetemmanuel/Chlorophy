@@ -60,6 +60,27 @@
 		<None Remove="Resources\Fonts\futurabook.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
+	  <None Remove="Resources\Images\Icons\downarrow.png" />
+	  <None Remove="Resources\Images\Icons\downarrow.svg" />
+	  <None Remove="Resources\Images\Icons\ecology.png" />
+	  <None Remove="Resources\Images\Icons\ecology.svg" />
+	  <None Remove="Resources\Images\Icons\home.svg" />
+	  <None Remove="Resources\Images\Icons\planetearth.png" />
+	  <None Remove="Resources\Images\Icons\planetearth.svg" />
+	  <None Remove="Resources\Images\Icons\recyclewater.png" />
+	  <None Remove="Resources\Images\Icons\recyclewater.svg" />
+	  <None Remove="Resources\Images\Icons\search.png" />
+	  <None Remove="Resources\Images\Icons\search.svg" />
+	  <None Remove="Resources\Images\Icons\shop.png" />
+	  <None Remove="Resources\Images\Icons\shop.svg" />
+	  <None Remove="Resources\Images\Icons\sun.png" />
+	  <None Remove="Resources\Images\Icons\sun.svg" />
+	  <None Remove="Resources\Images\Icons\tag.png" />
+	  <None Remove="Resources\Images\Icons\tag.svg" />
+	  <None Remove="Resources\Images\Icons\user.png" />
+	  <None Remove="Resources\Images\Icons\user.svg" />
+	  <None Remove="Resources\Images\Icons\wateringcan.png" />
+	  <None Remove="Resources\Images\Icons\wateringcan.svg" />
 	  <None Remove="Resources\Images\succulents.jpg" />
 	</ItemGroup>
 
@@ -68,6 +89,20 @@
 	  <MauiFont Include="Resources\Fonts\futurabook.ttf" />
 	  <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
 	  <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Icons\downarrow.png" />
+	  <MauiImage Include="Resources\Images\Icons\ecology.png" />
+	  <MauiImage Include="Resources\Images\Icons\home.png" />
+	  <MauiImage Include="Resources\Images\Icons\planetearth.png" />
+	  <MauiImage Include="Resources\Images\Icons\recyclewater.png" />
+	  <MauiImage Include="Resources\Images\Icons\search.png" />
+	  <MauiImage Include="Resources\Images\Icons\shop.png" />
+	  <MauiImage Include="Resources\Images\Icons\sun.png" />
+	  <MauiImage Include="Resources\Images\Icons\tag.png" />
+	  <MauiImage Include="Resources\Images\Icons\user.png" />
+	  <MauiImage Include="Resources\Images\Icons\wateringcan.png" />
 	</ItemGroup>
 
 	<ItemGroup>
