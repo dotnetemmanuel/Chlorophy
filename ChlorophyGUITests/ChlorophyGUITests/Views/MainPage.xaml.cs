@@ -7,9 +7,9 @@
             InitializeComponent();
         }
 
-        private void OnSearchCompleted(object sender, EventArgs e)
+        private async void OnSearchCompleted(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new Views.ResultsPage());
         }
 
         private void OnHomeClicked(object sender, EventArgs e)

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChlorophyGUITests.Views.ResultsPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#E6F8F7">
+    <VerticalStackLayout
+        Padding="20">
+        
+        <Label
+            Text="Search results for 'aloe'"
+            FontFamily="futurabook"
+            FontSize="16"
+            TextColor="#054B53"/>
+
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            RowDefinitions="Auto, Auto, *, *"
+                            ColumnDefinitions="Auto, *">
+
+                            <Border 
+                                StrokeThickness="2">
+
+                                <Border.Stroke >
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStopCollection>
+                                            <GradientStop Offset="0" Color="#054B53"/>
+                                            <GradientStop Offset="0.25" Color="#3F8668"/>
+                                            <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                            <GradientStop Offset="0.75" Color="#BED082"/>
+                                            <GradientStop Offset="1" Color="#F7D984"/>
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Border.Stroke>
+
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15"/>
+                                </Border.StrokeShape>
+
+                                <Image 
+                                Grid.RowSpan="4"
+                                Source="succulent.jpg"
+                                HeightRequest="100"/>
+                            </Border>
+                            
+                            <Label
+                                Text="Aloe Vera"
+                                FontFamily="bloomings"
+                                FontSize="20"
+                                TextColor="#054B53"/>
+                            <Button
+                                Text="+"
+                                CornerRadius="50"
+                                BorderColor="#054B53"
+                                BorderWidth="2"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </VerticalStackLayout>
+    
+    
+        
+</ContentPage>

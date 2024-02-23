@@ -5,7 +5,6 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E6F8F7">
 
-
     <Grid>
         <Grid
             Padding="20, 20, 20, 20"
@@ -50,10 +49,10 @@
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
-
                         <Entry
                         Grid.Column="2"
                         x:Name="Search"
+                        Text=""
                         Placeholder="Search"
                         PlaceholderColor="#BFBFBF"
                         BackgroundColor="#FFFFFF"
@@ -154,14 +153,5 @@
                 </Grid>
             </Grid>
         </Grid>
-
-        <ContentView >
-            <Frame  Margin="19"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent"
-                    Opacity=".75"
-                    IsVisible="True">
-            </Frame>
-        </ContentView>
-    </Grid>
+</Grid>
 </ContentPage>
