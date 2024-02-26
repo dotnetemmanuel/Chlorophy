@@ -60,6 +60,7 @@
 		<None Remove="Resources\Fonts\futurabook.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
 	  <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
+	  <None Remove="Resources\Images\Icons\close.png" />
 	  <None Remove="Resources\Images\Icons\downarrow.png" />
 	  <None Remove="Resources\Images\Icons\downarrow.svg" />
 	  <None Remove="Resources\Images\Icons\ecology.png" />
@@ -92,6 +93,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources\Images\Icons\close.png" />
 	  <MauiImage Include="Resources\Images\Icons\downarrow.png" />
 	  <MauiImage Include="Resources\Images\Icons\ecology.png" />
 	  <MauiImage Include="Resources\Images\Icons\home.png" />

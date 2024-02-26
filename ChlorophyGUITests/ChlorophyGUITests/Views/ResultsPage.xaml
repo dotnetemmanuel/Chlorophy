@@ -6,14 +6,32 @@
              BackgroundColor="#E6F8F7">
     <VerticalStackLayout
         Padding="20">
-        
-        <Label
-            Text="Search results for 'aloe'"
-            FontFamily="futurabook"
-            FontSize="16"
-            TextColor="#054B53"/>
 
-        <ListView>
+        <Grid ColumnDefinitions="Auto, *">
+            <Label
+                Grid.Column="0"
+                Text="Search results for 'aloe'"
+                FontFamily="futurabook"
+                FontSize="16"
+                TextColor="#054B53"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+
+            <ImageButton
+                Grid.Column="1"
+                Source="close.png"
+                HorizontalOptions="End"
+                MinimumHeightRequest="12"
+                MaximumHeightRequest="25"
+                VerticalOptions="Center"
+                Clicked="OnCloseClicked"/>
+
+        </Grid>
+            
+       
+        
+        <ListView
+            ItemsSource="{Binding Species}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
