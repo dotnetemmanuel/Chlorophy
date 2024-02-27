@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChlorophyGUITests.ViewModels"
+             x:Class="ChlorophyGUITests.Views.PlantDetailsPage"
+                          Shell.NavBarIsVisible="False"
+             BackgroundColor="#E6F8F7">
+    <ContentPage.BindingContext>
+        <vm:PlantDetailsPageViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <Grid>
+        <Grid
+            Padding="20, 20, 20, 20"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+               RowDefinitions="Auto, *,Auto, Auto, Auto, Auto">
+
+                <Grid 
+                    Grid.Row="0"
+                    ColumnDefinitions="Auto, *, *"
+                    HorizontalOptions="FillAndExpand">
+                    <Image 
+                        Grid.Column="0"
+                        Source="chlorophy_logo_svg.png"
+                        HeightRequest="45"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"/>
+
+                    <Label
+                        Grid.Column="1"
+                        x:Name="Chlorophy"
+                        Text="Chlorophy"
+                        TextColor="#054B53"
+                        FontSize="26"
+                        FontFamily="bloomings"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        Margin="20, 0, 0, 0"
+                        />
+
+                    <Border
+                        Padding="0,0,3,0"
+                        Grid.Column="2"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        BackgroundColor="Transparent"
+                        HeightRequest="30">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Entry
+                        Grid.Column="2"
+                        x:Name="Search"
+                        Text=""
+                        Placeholder="Search"
+                        PlaceholderColor="#BFBFBF"
+                        BackgroundColor="#FFFFFF"
+                        FontSize="11"
+                        FontFamily="futurabook"
+                        TextColor="#383838"
+                        VerticalTextAlignment="Start"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"
+                        WidthRequest="85"
+                        Completed="OnSearchCompleted"/>
+                    </Border>
+                </Grid>
+
+                <Grid 
+                    Grid.Row="1"                    
+                    Margin="0, 15, 0, 0">
+                    <Border 
+                        HorizontalOptions="Start"
+                        StrokeThickness="2">
+
+                        <Border.Stroke >
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStopCollection>
+                                    <GradientStop Offset="0" Color="#054B53"/>
+                                    <GradientStop Offset="0.25" Color="#3F8668"/>
+                                    <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                    <GradientStop Offset="0.75" Color="#BED082"/>
+                                    <GradientStop Offset="1" Color="#F7D984"/>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Border.Stroke>
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="15"/>
+                        </Border.StrokeShape>
+
+                        <Image
+                            Source="{Binding Plant.default_image.original_url}"
+                            Aspect="AspectFill"
+                            Opacity="0.8"/>
+                    </Border>
+
+                    <Frame
+                        x:Name="Plant_Common_Name"    
+                        BackgroundColor="#FFFFFF"
+                        Margin="20, 20, 20, 0"
+                        Opacity="1"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        BorderColor="Transparent"
+                        IsVisible="True">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label 
+                                Grid.Row="0"
+                                Text="{Binding Plant.common_name}"
+                                TextColor="#054B53"
+                                FontSize="18"
+                                FontFamily="bloomings"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                           
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <Grid 
+                    Grid.Row="2"
+                    Margin="0, 15, 0, 0"
+                    ColumnDefinitions=".5*, .5*">
+
+                    <Border 
+                            Padding="15,0,15,0"
+                            Grid.Column="0"
+                            Stroke="#3F8668"                        
+                            StrokeThickness="1.5"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Start"
+                            BackgroundColor="Transparent"
+                            HeightRequest="50">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+                        
+                        <Grid ColumnDefinitions="30, Auto">
+                                                  
+                        <Image
+                            Grid.Column="0"
+                            Source="ecology.png"
+                            HeightRequest="30"
+                            HorizontalOptions="Start"/>
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding Plant.cycle}"
+                            FontFamily="futurabook"
+                            FontSize="16"
+                            TextColor="#3F8668"
+                            VerticalOptions="Center"
+                            Margin="10, 0, 0, 0"/>
+                        </Grid>
+                    </Border>
+
+                    <Border 
+                        Padding="15,0,15,0"
+                        Grid.Column="1"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        HeightRequest="50">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="30, Auto">
+
+                            <Image
+                                Grid.Column="0"
+                                Source="tag.png"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Plant.common_name}"
+                                FontFamily="futurabook"
+                                FontSize="16"
+                                TextColor="#3F8668"
+                                VerticalOptions="Center"
+                                Margin="10, 0, 0, 0"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid 
+                    Grid.Row="3"
+                    Margin="0, 15, 0, 0"
+                    ColumnDefinitions=".5*, .5*">
+
+                    <Border 
+                        Padding="15,0,15,0"
+                        Grid.Column="0"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        HeightRequest="50">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="30, Auto">
+
+                            <Image
+                                Grid.Column="0"
+                                Source="sun.png"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                            <Label
+                                Grid.Column="1"
+                                
+                                FontFamily="futurabook"
+                                FontSize="16"
+                                TextColor="#3F8668"
+                                VerticalOptions="Center"
+                                Margin="10, 0, 0, 0">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{}{0}, {1}">
+                                        <Binding Path="Plant.sunlight[0]"/>
+                                        <Binding Path="Plant.sunlight[1]"/>                                        
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                        </Grid>
+                    </Border>
+
+                    <Border 
+                        Padding="15,0,15,0"
+                        Grid.Column="1"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        HeightRequest="50">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="30, Auto">
+
+                            <Image
+                                Grid.Column="0"
+                                Source="shop.png"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Plant.family}"
+                                FontFamily="futurabook"
+                                FontSize="16"
+                                TextColor="#3F8668"
+                                VerticalOptions="Center"
+                                Margin="10, 0, 0, 0"/>
+                        </Grid>
+                    </Border>
+
+                </Grid>
+
+                <Grid 
+                    Grid.Row="4"
+                    Margin="0, 15, 0, 0"
+                    ColumnDefinitions=".5*, .5*">
+
+                    <Border 
+                        Padding="15,0,15,0"
+                        Grid.Column="0"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        HeightRequest="50">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="30, Auto">
+
+                            <Image
+                                Grid.Column="0"
+                                Source="sun.png"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"/>
+                            <Label
+                                Grid.Column="1"
+                
+                                FontFamily="futurabook"
+                                FontSize="16"
+                                TextColor="#3F8668"
+                                VerticalOptions="Center"
+                                Margin="10, 0, 0, 0">
+                                <Label.Text>
+                                    <MultiBinding StringFormat="{}{0}, {1}">
+                                        <Binding Path="Plant.sunlight[0]"/>
+                                        <Binding Path="Plant.sunlight[1]"/>
+                                    </MultiBinding>
+                                </Label.Text>
+                            </Label>
+                        </Grid>
+                    </Border>                 
+                </Grid>
+
+                <Grid Grid.Row="5">
+
+                    <ImageButton 
+                        Source="search.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0, 0"
+                        Clicked="OnSearchClicked"/>
+                    
+                    <Border HorizontalOptions="Center"
+                            BackgroundColor="#3F8668"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            Stroke="Transparent">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+                        
+                        <ImageButton
+                        Source ="wateringcan.png"
+                         MinimumHeightRequest="30"
+                         MaximumHeightRequest="30"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Start"
+                            BackgroundColor="Transparent"
+                         Margin="0, 15, 0, 0"/>
+                    </Border>
+
+                    <ImageButton
+                        Source="user.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0 , 0"
+                        Clicked="OnUserClicked"/>
+                        
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

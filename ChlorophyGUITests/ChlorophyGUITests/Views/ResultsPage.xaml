@@ -4,6 +4,7 @@
              x:Class="ChlorophyGUITests.Views.ResultsPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E6F8F7">
+    <ScrollView>
     <VerticalStackLayout
         Padding="20">
 
@@ -27,21 +28,24 @@
                 Clicked="OnCloseClicked"/>
 
         </Grid>
-            
-       
+
+
         
         <ListView
-            ItemsSource="{Binding Species}">
+            ItemsSource="{Binding SpeciesList}" 
+            ItemSelected="OnlistViewItemSelected"
+            Margin="0,30,0,0">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid 
-                            RowDefinitions="Auto, Auto, *, *"
-                            ColumnDefinitions="Auto, *">
-
+                            RowDefinitions="Auto"
+                            ColumnDefinitions="100, Auto"
+                            ColumnSpacing="10"
+                            Margin="0, 0, 0, 10">
+                            
                             <Border 
                                 StrokeThickness="2">
-
                                 <Border.Stroke >
                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                         <GradientStopCollection>
@@ -59,29 +63,42 @@
                                 </Border.StrokeShape>
 
                                 <Image 
-                                Grid.RowSpan="4"
-                                Source="succulent.jpg"
-                                HeightRequest="100"/>
+                                Grid.Column="0"
+                                Grid.RowSpan="2"
+                                Source="{Binding default_image.medium_url, FallbackValue='fallback.png'}"
+                                MinimumHeightRequest="125"
+                                Aspect="AspectFill"/>
                             </Border>
                             
                             <Label
-                                Text="Aloe Vera"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding common_name}"
                                 FontFamily="bloomings"
                                 FontSize="20"
+                                HorizontalOptions="Start"
                                 TextColor="#054B53"/>
-                            <Button
-                                Text="+"
-                                CornerRadius="50"
-                                BorderColor="#054B53"
-                                BorderWidth="2"/>
+                            <ImageButton
+                                Source="add.png"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                MaximumHeightRequest="20"
+                                MinimumHeightRequest="20"
+                                MaximumWidthRequest="20"
+                                MinimumWidthRequest="20"
+                                HorizontalOptions="Start"
+                                Padding="0"
+                                Margin="0"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
+
     </VerticalStackLayout>
-    
-    
-        
+    </ScrollView>
+
+
+
 </ContentPage>

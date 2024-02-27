@@ -17,7 +17,7 @@
         public Hardiness? hardiness { get; set; }
         public HardinessLocation? hardiness_location { get; set; }
         public string? watering { get; set; }
-        public List<string>? depth_water_requirement { get; set; }
+        //public List<string>? depth_water_requirement { get; set; }
         public List<string>? volume_water_requirement { get; set; }
         public string? watering_period { get; set; }
         public Benchmark? watering_general_benchmark { get; set; }

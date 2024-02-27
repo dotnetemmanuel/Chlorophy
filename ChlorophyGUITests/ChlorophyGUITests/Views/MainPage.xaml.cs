@@ -7,17 +7,20 @@
             InitializeComponent();
         }
 
+        public static string keyword = null;
+
         private async void OnSearchCompleted(object sender, EventArgs e)
         {
+            keyword = Search.Text;
             await Navigation.PushAsync(new Views.ResultsPage());
         }
 
-        private void OnHomeClicked(object sender, EventArgs e)
+        private async void OnHomeClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopToRootAsync();
         }
 
-        private void OnUserClicked(object sender, EventArgs e)
+        private async void OnUserClicked(object sender, EventArgs e)
         {
 
         }
