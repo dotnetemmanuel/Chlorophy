@@ -24,7 +24,7 @@
         public List<PlantAnatomy>? plant_anatomy { get; set; }
         public List<string>? sunlight { get; set; }
         public List<string>? pruning_month { get; set; }
-        public PruningCount? pruning_count { get; set; }
+        //public PruningCount? pruning_count { get; set; }
         public int? seeds { get; set; }
         public string? maintenance { get; set; }
         public string? care_guides { get; set; }

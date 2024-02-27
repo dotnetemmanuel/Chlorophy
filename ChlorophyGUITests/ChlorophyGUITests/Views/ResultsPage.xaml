@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ChlorophyGUITests.Views.ResultsPage"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#E6F8F7">
+             BackgroundColor="#E4F8F7">
     <ScrollView>
     <VerticalStackLayout
         Padding="20">
