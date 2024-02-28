@@ -21,4 +21,18 @@ public partial class UserPage : ContentPage
     {
         await Navigation.PushAsync(new Views.UserPage());
     }
+
+    private async void OnCreateAccountClicked(object sender, EventArgs e)
+    {
+        Models.User user = new Models.User()
+        {
+            Id = Guid.NewGuid(),
+            Firstname = FirstnameCreate.Text,
+            Lastname = LastnameCreate.Text,
+            Email = EmailCreate.Text,
+            Password = PasswordCreate.Text
+        };
+
+        await Data.Database.ProductCollection().InsertOneAsync(user);
+    }
 }

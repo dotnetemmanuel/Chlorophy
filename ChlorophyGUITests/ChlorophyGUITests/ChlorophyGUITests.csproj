@@ -63,6 +63,7 @@
 	  <None Remove="Resources\Images\fallback.png" />
 	  <None Remove="Resources\Images\Icons\add.png" />
 	  <None Remove="Resources\Images\Icons\close.png" />
+	  <None Remove="Resources\Images\Icons\danger.png" />
 	  <None Remove="Resources\Images\Icons\downarrow.png" />
 	  <None Remove="Resources\Images\Icons\downarrow.svg" />
 	  <None Remove="Resources\Images\Icons\ecology.png" />
@@ -98,6 +99,7 @@
 	<ItemGroup>
 	  <MauiImage Include="Resources\Images\Icons\add.png" />
 	  <MauiImage Include="Resources\Images\Icons\close.png" />
+	  <MauiImage Include="Resources\Images\Icons\danger.png" />
 	  <MauiImage Include="Resources\Images\Icons\downarrow.png" />
 	  <MauiImage Include="Resources\Images\Icons\ecology.png" />
 	  <MauiImage Include="Resources\Images\Icons\home.png" />
@@ -116,6 +118,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="MongoDB.Driver" Version="2.24.0" />
 	</ItemGroup>
 
 	<ItemGroup>

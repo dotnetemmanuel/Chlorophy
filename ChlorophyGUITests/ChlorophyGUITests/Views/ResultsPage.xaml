@@ -11,7 +11,7 @@
         <Grid ColumnDefinitions="Auto, *">
             <Label
                 Grid.Column="0"
-                Text="Search results for 'aloe'"
+                Text="Search results"
                 FontFamily="futurabook"
                 FontSize="16"
                 TextColor="#054B53"
