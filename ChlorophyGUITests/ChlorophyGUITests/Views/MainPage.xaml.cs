@@ -22,7 +22,7 @@
 
         private async void OnUserClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new Views.UserPage());
         }
     }
 

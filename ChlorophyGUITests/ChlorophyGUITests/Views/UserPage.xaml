@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChlorophyGUITests.Views.UserPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#E4F8F7">
+    <Grid>
+        <Grid
+            Padding="20, 20, 20, 20"
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+               RowDefinitions="Auto, *, Auto">
+
+                <Grid 
+                    Grid.Row="0"
+                    ColumnDefinitions="Auto, *, *"
+                    HorizontalOptions="FillAndExpand">
+                    <Image 
+                        Grid.Column="0"
+                        Source="chlorophy_logo_svg.png"
+                        HeightRequest="45"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"/>
+
+                    <Label
+                        Grid.Column="1"
+                        x:Name="Chlorophy"
+                        Text="Chlorophy"
+                        TextColor="#054B53"
+                        FontSize="26"
+                        FontFamily="bloomings"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        Margin="20, 0, 0, 0"
+                        />
+
+                    <ImageButton
+                            Grid.Column="2"
+                            Source="close.png"
+                            MaximumHeightRequest="30"
+                            MinimumHeightRequest="30"
+                            HorizontalOptions="End"
+                            Clicked="OnCloseButtonClicked"/>
+                </Grid>
+
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    IsVisible="True">
+
+                    <Label
+                        Text="Sign in to your account"
+                        FontFamily="futurabook"
+                        FontSize="20"
+                        TextColor="#054B53"
+                        HorizontalOptions="Center"/>
+
+                    <Border
+                        Padding="0,0,3,0"
+                        Grid.Column="2"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#FFFFFF"
+                        HeightRequest="30"
+                        WidthRequest="210"
+                        Margin="0,20,0,0">
+                        
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Entry
+                            Grid.Column="2"
+                            x:Name="Email"
+                            Text=""
+                            Placeholder="Email"
+                            PlaceholderColor="#BFBFBF"
+                            FontSize="11"
+                            FontFamily="futurabook"
+                            TextColor="#383838"
+                            VerticalTextAlignment="Start"
+                            HorizontalTextAlignment="End"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            WidthRequest="200"/>
+                    </Border>
+                    
+                    <Border
+                        Padding="0,0,3,0"
+                        Grid.Column="2"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#FFFFFF"
+                        HeightRequest="30"
+                        WidthRequest="210"
+                        Margin="0,20,0,0">
+    
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="50"/>
+                        </Border.StrokeShape>
+
+                        <Entry
+                            Grid.Column="2"
+                            x:Name="Password"
+                            Text=""
+                            Placeholder="Password"
+                            PlaceholderColor="#BFBFBF"
+                            FontSize="11"
+                            FontFamily="futurabook"
+                            TextColor="#383838"
+                            VerticalTextAlignment="Start"
+                            HorizontalTextAlignment="End"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            WidthRequest="200"/>
+                    </Border>
+
+                    <Button
+                        x:Name="SignIn"
+                        Text="Sign in"
+                        FontFamily="futurabook"
+                        FontSize="12"
+                        TextColor="#FFFFFF"
+                        BackgroundColor="#054B53"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="Center"
+                        CornerRadius="18"
+                        MinimumHeightRequest="30"/>
+                        
+
+                </VerticalStackLayout>
+
+                <Grid Grid.Row="2">
+
+                    <ImageButton 
+                        Source="home.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0, 0"
+                        Clicked="OnHomeClicked"/>
+
+                    <ImageButton
+                        Source="user.png"
+                        MinimumHeightRequest="30"
+                        MaximumHeightRequest="30"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0, 15, 0 , 0"
+                        Clicked="OnUserClicked"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>
