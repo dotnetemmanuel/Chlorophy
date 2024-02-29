@@ -1,13 +1,16 @@
+using MongoDB.Driver;
+
 namespace ChlorophyGUITests.Views;
 
 public partial class ResultsPage : ContentPage
 {
+    public bool IsVisible { get; set; } = false;
+
     public ResultsPage()
     {
         InitializeComponent();
         BindingContext = new ViewModels.ResultsPageViewModel();
     }
-
 
     private async void OnCloseClicked(object sender, EventArgs e)
     {
@@ -28,6 +31,23 @@ public partial class ResultsPage : ContentPage
             page.BindingContext = viewModel;
             await Navigation.PushAsync(page);
         }
+    }
 
+    private async void OnAddButtonClicked(object sender, EventArgs e)
+    {
+        var button = (ImageButton)sender;
+        var selectedItem = button.BindingContext as Models.Species;
+
+        if (selectedItem != null)
+        {
+            var plant = await ViewModels.PlantDetailsPageViewModel.GetPlantDetails(selectedItem.id);
+            var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefaultAsync();
+
+            existingUser.Plants.Add(plant);
+            var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
+            await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
+
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 }

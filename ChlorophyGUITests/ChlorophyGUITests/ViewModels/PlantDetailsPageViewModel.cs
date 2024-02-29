@@ -11,10 +11,6 @@ namespace ChlorophyGUITests.ViewModels
         public PlantDetailsPageViewModel()
         {
 
-            //Plant = new Models.PlantDetails();
-            //var task = Task.Run(() => GetPlantDetails(SpeciesId));
-            //task.Wait();
-            //Plant = task.Result;
         }
 
         public async Task InitializeAsync()

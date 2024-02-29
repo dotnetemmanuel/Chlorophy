@@ -69,6 +69,7 @@
 	  <None Remove="Resources\Images\Icons\ecology.png" />
 	  <None Remove="Resources\Images\Icons\ecology.svg" />
 	  <None Remove="Resources\Images\Icons\home.svg" />
+	  <None Remove="Resources\Images\Icons\leftarrow.png" />
 	  <None Remove="Resources\Images\Icons\minus.png" />
 	  <None Remove="Resources\Images\Icons\planetearth.png" />
 	  <None Remove="Resources\Images\Icons\planetearth.svg" />
@@ -103,6 +104,7 @@
 	  <MauiImage Include="Resources\Images\Icons\downarrow.png" />
 	  <MauiImage Include="Resources\Images\Icons\ecology.png" />
 	  <MauiImage Include="Resources\Images\Icons\home.png" />
+	  <MauiImage Include="Resources\Images\Icons\leftarrow.png" />
 	  <MauiImage Include="Resources\Images\Icons\minus.png" />
 	  <MauiImage Include="Resources\Images\Icons\planetearth.png" />
 	  <MauiImage Include="Resources\Images\Icons\recyclewater.png" />

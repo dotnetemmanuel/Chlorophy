@@ -1,10 +1,17 @@
+using MongoDB.Driver;
+using System.Text.RegularExpressions;
+
 namespace ChlorophyGUITests.Views;
 
 public partial class UserPage : ContentPage
 {
+    public Models.User CurrentUser { get; set; }
+    public static string SignedInUserEmail { get; private set; }
+
     public UserPage()
     {
         InitializeComponent();
+        CheckIfSignedIn();
     }
 
     private async void OnCloseButtonClicked(object sender, EventArgs e)
@@ -14,7 +21,7 @@ public partial class UserPage : ContentPage
 
     private async void OnHomeClicked(object sender, EventArgs e)
     {
-        await Navigation.PopToRootAsync();
+        await Navigation.PushAsync(new MainPage());
     }
 
     private async void OnUserClicked(object sender, EventArgs e)
@@ -22,17 +29,76 @@ public partial class UserPage : ContentPage
         await Navigation.PushAsync(new Views.UserPage());
     }
 
+    private void CheckIfSignedIn()
+    {
+        if (Views.UserPage.SignedInUserEmail != null)
+        {
+            SignInCreate.IsVisible = false;
+        }
+    }
+
     private async void OnCreateAccountClicked(object sender, EventArgs e)
     {
-        Models.User user = new Models.User()
-        {
-            Id = Guid.NewGuid(),
-            Firstname = FirstnameCreate.Text,
-            Lastname = LastnameCreate.Text,
-            Email = EmailCreate.Text,
-            Password = PasswordCreate.Text
-        };
+        string emailPattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+        Regex regex = new Regex(emailPattern);
+        string email = EmailCreate.Text;
+        MatchCollection matchEmail = regex.Matches(email);
 
-        await Data.Database.ProductCollection().InsertOneAsync(user);
+        if (matchEmail.Count > 0 && FirstnameCreate.Text.Length > 0 && LastnameCreate.Text.Length > 0 && PasswordCreate.Text.Length > 0)
+        {
+            var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", email)).FirstOrDefaultAsync();
+            if (existingUser != null)
+            {
+                // User with this email already exists
+                ErrorMessage.Text = "A user with this email already exists.";
+                RegexCheck.IsVisible = true;
+                return; // Stop further execution
+            }
+
+            Models.User user = new Models.User()
+            {
+                Id = Guid.NewGuid(),
+                Firstname = FirstnameCreate.Text,
+                Lastname = LastnameCreate.Text,
+                Email = EmailCreate.Text,
+                Password = PasswordCreate.Text,
+                Plants = new()
+            };
+            await Data.Database.ProductCollection().InsertOneAsync(user);
+            await Navigation.PopToRootAsync();
+        }
+        else
+        {
+            if (matchEmail.Count <= 0)
+            {
+                ErrorMessage.Text = "Invalid e-mail format";
+                RegexCheck.IsVisible = true;
+            }
+            else if (FirstnameCreate.Text.Length < 0 && LastnameCreate.Text.Length < 0 && PasswordCreate.Text.Length < 0)
+            {
+                ErrorMessage.Text = "Input cannot be empty";
+                RegexCheck.IsVisible = true;
+            }
+        }
+    }
+
+    private async void OnSignInButtonClicked(object sender, EventArgs e)
+    {
+        string email = EmailSignIn.Text;
+        string password = PasswordSignIn.Text;
+        var existingUserEmail = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", email)).FirstOrDefaultAsync();
+
+        if (existingUserEmail != null && existingUserEmail.Password == password)
+        {
+            SignedInUserEmail = existingUserEmail.Email;
+            CurrentUser = existingUserEmail;
+
+            await Navigation.PushAsync(new MainPage());
+        }
+        else
+        {
+            ErrorMessage.Text = "Something went wrong";
+            RegexCheck.IsVisible = true;
+        }
     }
 }

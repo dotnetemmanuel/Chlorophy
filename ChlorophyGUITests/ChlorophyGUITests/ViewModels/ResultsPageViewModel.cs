@@ -13,6 +13,7 @@ namespace ChlorophyGUITests.ViewModels
             var task = Task.Run(() => ViewModels.ResultsPageViewModel.GetSpeciesAsync(MainPage.keyword));
             task.Wait();
             SpeciesList.AddRange(task.Result);
+
         }
         public static async Task<List<Models.Species>> GetSpeciesAsync(string keyword)
         {

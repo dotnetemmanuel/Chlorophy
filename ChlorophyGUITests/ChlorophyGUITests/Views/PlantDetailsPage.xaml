@@ -106,7 +106,7 @@
                         x:Name="Plant_Common_Name"    
                         BackgroundColor="#95FFFFFF"
                         Margin="20, 20, 20, 0"
-                       VerticalOptions="Start"
+                        VerticalOptions="Start"
                         HorizontalOptions="Center"
                         BorderColor="Transparent"
                         IsVisible="True">
@@ -325,7 +325,7 @@
                 <Grid Grid.Row="5">
 
                     <ImageButton 
-                        Source="search.png"
+                        Source="leftarrow.png"
                         MinimumHeightRequest="30"
                         MaximumHeightRequest="30"
                         HorizontalOptions="Start"
@@ -343,13 +343,13 @@
                         </Border.StrokeShape>
                         
                         <ImageButton
-                        Source ="wateringcan.png"
-                         MinimumHeightRequest="30"
-                         MaximumHeightRequest="30"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Start"
+                            Source ="wateringcan.png"
+                            MinimumHeightRequest="27"
+                            MaximumHeightRequest="27"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start"
                             BackgroundColor="Transparent"
-                         Margin="0, 15, 0, 0"/>
+                            Margin="0, 15, 0, 0"/>
                     </Border>
 
                     <ImageButton

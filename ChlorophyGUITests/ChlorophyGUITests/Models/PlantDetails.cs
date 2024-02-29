@@ -1,6 +1,6 @@
 ﻿namespace ChlorophyGUITests.Models
 {
-    class PlantDetails
+    public class PlantDetails
     {
         public int? id { get; set; }
         public string? common_name { get; set; }
