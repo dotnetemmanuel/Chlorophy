@@ -135,87 +135,82 @@
 
                     <ScrollView>
                         <ListView
-                        Grid.Row="1"
-                        ItemsSource="{Binding PlantDetails}"
-                        ItemSelected="OnListViewItemSelected"
-                        HorizontalOptions="FillAndExpand">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>                                
-                                <ViewCell>
-                                    <Frame 
-                                        Padding="10"
-                                        CornerRadius="15"
-                                        MinimumWidthRequest="150"
-                                        MaximumWidthRequest="150" 
-                                        HorizontalOptions="Start"
-                                        BorderColor="Transparent"
-                                        BackgroundColor="#98FFFFFF"
-                                        Margin="20, 20, 20, 0">
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            ItemsSource="{Binding PlantDetails}"
+                            ItemSelected="OnListViewItemSelected"
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="Start">
 
-                                        <VerticalStackLayout>
-                                            <Border 
-                                                StrokeThickness="2"
-                                                WidthRequest="70"
-                                                HorizontalOptions="Center">
-                                                <Border.Stroke >
-                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                                        <GradientStopCollection>
-                                                            <GradientStop Offset="0" Color="#054B53"/>
-                                                            <GradientStop Offset="0.25" Color="#3F8668"/>
-                                                            <GradientStop Offset="0.50" Color="#7CC57F"/>
-                                                            <GradientStop Offset="0.75" Color="#BED082"/>
-                                                            <GradientStop Offset="1" Color="#F7D984"/>
-                                                        </GradientStopCollection>
-                                                    </LinearGradientBrush>
-                                                </Border.Stroke>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame 
+                                            Padding="10"
+                                            CornerRadius="15"
+                                            MinimumWidthRequest="150"
+                                            MaximumWidthRequest="150" 
+                                            HorizontalOptions="Start"
+                                            BorderColor="Transparent"
+                                            BackgroundColor="#98FFFFFF"
+                                            Margin="20, 20, 20, 0">
 
-                                                <Border.StrokeShape>
-                                                    <RoundRectangle CornerRadius="15"/>
-                                                </Border.StrokeShape>
+                                            <VerticalStackLayout>
+                                                <Border 
+                                                    StrokeThickness="2"
+                                                    WidthRequest="70"
+                                                    HorizontalOptions="Center">
+                                                    <Border.Stroke >
+                                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                            <GradientStopCollection>
+                                                                <GradientStop Offset="0" Color="#054B53"/>
+                                                                <GradientStop Offset="0.25" Color="#3F8668"/>
+                                                                <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                                                <GradientStop Offset="0.75" Color="#BED082"/>
+                                                                <GradientStop Offset="1" Color="#F7D984"/>
+                                                            </GradientStopCollection>
+                                                        </LinearGradientBrush>
+                                                    </Border.Stroke>
 
-                                                <Image 
-                                                Grid.Column="0"
-                                                Grid.RowSpan="2"
-                                                Source="{Binding default_image.small_url, FallbackValue='fallback.png'}"
-                                                MinimumHeightRequest="90"
-                                                MaximumHeightRequest="90"
-                                                MinimumWidthRequest="70"
-                                                MaximumWidthRequest="70"
-                                                Aspect="AspectFill"/>
+                                                    <Border.StrokeShape>
+                                                        <RoundRectangle CornerRadius="15"/>
+                                                    </Border.StrokeShape>
+
+                                                    <Image 
+                                                    Grid.Column="0"
+                                                    Grid.RowSpan="2"
+                                                    Source="{Binding default_image.small_url, FallbackValue='fallback.png'}"
+                                                    MinimumHeightRequest="90"
+                                                    MaximumHeightRequest="90"
+                                                    MinimumWidthRequest="70"
+                                                    MaximumWidthRequest="70"
+                                                    Aspect="AspectFill"/>
 
 
-                                            </Border>
-                                            <Label
-                                                Text="{Binding common_name}"
-                                                FontFamily="bloomings"
-                                                FontSize="20"
-                                                HorizontalOptions="Center"
-                                                TextColor="#054B53"/>
+                                                </Border>
+                                                <Label
+                                                    Text="{Binding common_name}"
+                                                    FontFamily="bloomings"
+                                                    FontSize="20"
+                                                    HorizontalOptions="Center"
+                                                    TextColor="#054B53"/>
 
-                                            <ImageButton
-                                                Margin="0,5,0,0"
-                                                Source="minus.png"
-                                                MaximumHeightRequest="20"
-                                                MinimumHeightRequest="20"
-                                                VerticalOptions="End"
-                                                Clicked="OnDeleteButtonClicked">
-                                            </ImageButton>
-                                             
-                                        </VerticalStackLayout>
+                                                <ImageButton
+                                                    Margin="0,5,0,0"
+                                                    Source="minus.png"
+                                                    MaximumHeightRequest="20"
+                                                    MinimumHeightRequest="20"
+                                                    VerticalOptions="End"
+                                                    Clicked="OnDeleteButtonClicked">
+                                                </ImageButton>
 
-                                        
-                                    </Frame>
-                                   
-                                </ViewCell> 
-                              
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                        
-                    </ListView>
+                                            </VerticalStackLayout>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </ScrollView>
-                    
-                    
-                    
                 </Grid>
 
                 <Grid Grid.Row="2">

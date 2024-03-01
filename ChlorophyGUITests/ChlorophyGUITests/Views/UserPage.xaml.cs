@@ -7,11 +7,16 @@ public partial class UserPage : ContentPage
 {
     public Models.User CurrentUser { get; set; }
     public static string SignedInUserEmail { get; private set; }
+    public string firstName { get; set; }
+    public string lastName { get; set; }
+    public string email { get; set; }
 
     public UserPage()
     {
         InitializeComponent();
+        BindingContext = new ViewModels.UserPageViewModel();
         CheckIfSignedIn();
+
     }
 
     private async void OnCloseButtonClicked(object sender, EventArgs e)
@@ -34,6 +39,7 @@ public partial class UserPage : ContentPage
         if (Views.UserPage.SignedInUserEmail != null)
         {
             SignInCreate.IsVisible = false;
+            SignedIn.IsVisible = true;
         }
     }
 
@@ -100,5 +106,11 @@ public partial class UserPage : ContentPage
             ErrorMessage.Text = "Something went wrong";
             RegexCheck.IsVisible = true;
         }
+    }
+
+    private async void OnLogOutClicked(object sender, EventArgs e)
+    {
+        Views.UserPage.SignedInUserEmail = null;
+        await Navigation.PushAsync(new Views.UserPage());
     }
 }

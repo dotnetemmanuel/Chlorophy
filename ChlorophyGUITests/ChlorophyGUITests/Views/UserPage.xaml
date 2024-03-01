@@ -76,7 +76,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailSignIn"
-                            Text=""
+                            Text="emmanuel.duchene@gmail.com"
                             Placeholder="Email"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -108,7 +108,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordSignIn"
-                            Text=""
+                            Text="abc123"
                             Placeholder="Password"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -314,6 +314,54 @@
                             TextColor="#DE1548"/>
                     </Grid>
                     
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    x:Name="SignedIn"
+                    Grid.Row="1"
+                    IsVisible="False"
+                    VerticalOptions="Center">
+                    <Label
+                        Text="Signed in as:"
+                        FontFamily="bloomings"
+                        FontSize="36"
+                        TextColor="#054B53"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,30"/>
+
+                    <Label
+                        FontFamily="futurabook"
+                        FontSize="24"
+                        TextColor="#054B53"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,30">
+                        <Label.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="User.Firstname"/>
+                                <Binding Path="User.Lastname"/>
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+
+                    <Label
+                        Text="{Binding User.Email}"
+                        FontFamily="futurabook"
+                        FontSize="20"
+                        TextColor="#054B53"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,30"/>
+
+                    <Button
+                        x:Name="LogOut"
+                        Text="Log out"
+                        FontFamily="futurabook"
+                        FontSize="14"
+                        TextColor="#FFF"
+                        BackgroundColor="#054B53"
+                        CornerRadius="22"
+                        HorizontalOptions="Center"
+                        Clicked="OnLogOutClicked"/>
+
                 </VerticalStackLayout>
 
                 <Grid Grid.Row="2">
