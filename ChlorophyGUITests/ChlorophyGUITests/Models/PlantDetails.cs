@@ -17,8 +17,8 @@
         public Hardiness? hardiness { get; set; }
         public HardinessLocation? hardiness_location { get; set; }
         public string? watering { get; set; }
-        //public List<string>? depth_water_requirement { get; set; }
-        public List<string>? volume_water_requirement { get; set; }
+        //public List<int>? depth_water_requirement { get; set; }
+        //public WaterVolume? volume_water_requirement { get; set; }
         public string? watering_period { get; set; }
         public Benchmark? watering_general_benchmark { get; set; }
         public List<PlantAnatomy>? plant_anatomy { get; set; }
@@ -59,6 +59,14 @@
         public string? description { get; set; }
         public DefaultImage? default_image { get; set; }
         public string? other_images { get; set; }
+
+        public DateTime? WateringDate { get; set; } = null;
+    }
+
+    public class WaterVolume
+    {
+        public int? value { get; set; }
+        public string? unit { get; set; }
     }
 
     public class Dimensions
@@ -95,7 +103,7 @@
 
     public class PruningCount
     {
-        public int? amount { get; set; }
+        public string? amount { get; set; }
         public string? interval { get; set; }
     }
 

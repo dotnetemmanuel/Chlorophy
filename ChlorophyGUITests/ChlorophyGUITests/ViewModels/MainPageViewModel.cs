@@ -40,7 +40,7 @@ namespace ChlorophyGUITests.ViewModels
             }
         }
 
-        private async Task<Models.User> GetCurrentUser()
+        public static async Task<Models.User> GetCurrentUser()
         {
             if (Views.UserPage.SignedInUserEmail != null)
             {

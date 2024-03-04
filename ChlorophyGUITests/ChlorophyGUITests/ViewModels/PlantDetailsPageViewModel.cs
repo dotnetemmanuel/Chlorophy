@@ -39,7 +39,7 @@ namespace ChlorophyGUITests.ViewModels
                 string responseString = await response.Content.ReadAsStringAsync();
 
                 plant = JsonSerializer.Deserialize<Models.PlantDetails>(responseString);
-
+                plant.WateringDate = null;
                 return plant;
             }
             else
@@ -47,5 +47,7 @@ namespace ChlorophyGUITests.ViewModels
                 return null;
             }
         }
+
+
     }
 }

@@ -170,7 +170,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="FirstnameCreate"
-                            Text=""
+                            Text="Emmanuel"
                             Placeholder="Firstname"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -202,7 +202,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="LastnameCreate"
-                            Text=""
+                            Text="Duchene"
                             Placeholder="Lastname"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -234,8 +234,8 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailCreate"
-                            Text=""
-                            Placeholder="Email"
+                            Text="emmanuel.duchene@gmail.com"
+                            Placeholder="E-mail"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
                             FontFamily="futurabook"
@@ -266,7 +266,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordCreate"
-                            Text=""
+                            Text="abc123"
                             Placeholder="Password"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"

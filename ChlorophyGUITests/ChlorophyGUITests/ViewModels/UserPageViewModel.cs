@@ -1,6 +1,4 @@
-﻿using MongoDB.Driver;
-
-namespace ChlorophyGUITests.ViewModels
+﻿namespace ChlorophyGUITests.ViewModels
 {
 
 
@@ -12,7 +10,7 @@ namespace ChlorophyGUITests.ViewModels
         {
             User = new();
 
-            var task = Task.Run(() => GetCurrentUser());
+            var task = Task.Run(() => ViewModels.MainPageViewModel.GetCurrentUser());
             task.Wait();
             var currentUser = task.Result;
 
@@ -22,19 +20,19 @@ namespace ChlorophyGUITests.ViewModels
             }
         }
 
-        private async Task<Models.User> GetCurrentUser()
-        {
-            if (Views.UserPage.SignedInUserEmail != null)
-            {
-                string currentUserEmail = Views.UserPage.SignedInUserEmail;
-                var currentUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", currentUserEmail)).FirstOrDefaultAsync();
+        //private async Task<Models.User> GetCurrentUser()
+        //{
+        //    if (Views.UserPage.SignedInUserEmail != null)
+        //    {
+        //        string currentUserEmail = Views.UserPage.SignedInUserEmail;
+        //        var currentUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", currentUserEmail)).FirstOrDefaultAsync();
 
-                return currentUser;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        //        return currentUser;
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }

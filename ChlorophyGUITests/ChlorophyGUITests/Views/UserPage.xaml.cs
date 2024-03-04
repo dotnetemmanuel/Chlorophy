@@ -16,7 +16,6 @@ public partial class UserPage : ContentPage
         InitializeComponent();
         BindingContext = new ViewModels.UserPageViewModel();
         CheckIfSignedIn();
-
     }
 
     private async void OnCloseButtonClicked(object sender, EventArgs e)
@@ -70,6 +69,7 @@ public partial class UserPage : ContentPage
                 Password = PasswordCreate.Text,
                 Plants = new()
             };
+
             await Data.Database.ProductCollection().InsertOneAsync(user);
             await Navigation.PopToRootAsync();
         }
@@ -88,7 +88,7 @@ public partial class UserPage : ContentPage
         }
     }
 
-    private async void OnSignInButtonClicked(object sender, EventArgs e)
+    public async void OnSignInButtonClicked(object sender, EventArgs e)
     {
         string email = EmailSignIn.Text;
         string password = PasswordSignIn.Text;
@@ -99,7 +99,7 @@ public partial class UserPage : ContentPage
             SignedInUserEmail = existingUserEmail.Email;
             CurrentUser = existingUserEmail;
 
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PushAsync(new UserPage());
         }
         else
         {
