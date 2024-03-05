@@ -33,8 +33,7 @@
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
-                        Margin="20, 0, 0, 0"
-                        />
+                        Margin="20, 0, 0, 0"/>
 
                     <Border
                         Padding="0,0,3,0"
@@ -73,9 +72,9 @@
                     Margin="0, 15, 0, 0">
                    
                     <Border 
-                        StrokeThickness="2">
+                        StrokeThickness="2.5">
 
-                        <Border.Stroke >
+                        <Border.Stroke>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStopCollection>
                                     <GradientStop Offset="0" Color="#054B53"/>
@@ -185,14 +184,13 @@
                                                     MinimumWidthRequest="70"
                                                     MaximumWidthRequest="70"
                                                     Aspect="AspectFill"/>
-
-
                                                 </Border>
                                                 <Label
                                                     Text="{Binding common_name}"
                                                     FontFamily="bloomings"
                                                     FontSize="20"
                                                     HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
                                                     TextColor="#054B53"/>
 
                                                 <ImageButton
@@ -203,6 +201,16 @@
                                                     VerticalOptions="End"
                                                     Clicked="OnDeleteButtonClicked">
                                                 </ImageButton>
+
+                                                <Label
+                                                    Text="{Binding WateringMessage}"
+                                                    FontFamily="futurabook"
+                                                    FontSize="16"
+                                                    HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    TextColor="#DE1548"
+                                                    Margin="0,5, 0, 0"/>
+
 
                                             </VerticalStackLayout>
                                         </Frame>

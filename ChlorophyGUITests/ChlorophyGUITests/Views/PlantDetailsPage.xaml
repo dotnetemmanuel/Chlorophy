@@ -331,7 +331,7 @@
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
                         Margin="0, 15, 0, 0"
-                        Clicked="OnSearchClicked"/>
+                        Clicked="OnBackToPreviousClicked"/>
                     
                     <Border HorizontalOptions="Center"
                             BackgroundColor="#3F8668"
@@ -343,7 +343,7 @@
                         </Border.StrokeShape>
                         
                         <ImageButton
-                            CommandParameter="{Binding .}"
+                            CommandParameter="{Binding Plant}"
                             x:Name="WateringButton"
                             Source ="wateringcan.png"
                             MinimumHeightRequest="27"

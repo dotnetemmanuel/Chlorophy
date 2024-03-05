@@ -4,11 +4,14 @@ namespace ChlorophyGUITests
 {
     public partial class MainPage : ContentPage
     {
+        public static DateTime Today;
+
         public MainPage()
         {
             InitializeComponent();
             BindingContext = new ViewModels.MainPageViewModel();
             HideWelcomeMessage();
+            Today = DateTime.Now;
         }
 
         public static string keyword = null;
@@ -52,7 +55,7 @@ namespace ChlorophyGUITests
             {
                 var viewModel = new ViewModels.PlantDetailsPageViewModel();
                 viewModel.SetSpeciesId((int)plant.id);
-                await viewModel.InitializeAsync();
+                await viewModel.InitializeDbAsync();
 
                 var page = new Views.PlantDetailsPage();
                 page.BindingContext = viewModel;

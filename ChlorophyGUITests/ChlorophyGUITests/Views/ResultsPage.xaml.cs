@@ -14,7 +14,7 @@ public partial class ResultsPage : ContentPage
 
     private async void OnCloseClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MainPage());
     }
 
     public async void OnlistViewItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -25,7 +25,7 @@ public partial class ResultsPage : ContentPage
         {
             var viewModel = new ViewModels.PlantDetailsPageViewModel();
             viewModel.SetSpeciesId(species.id);
-            await viewModel.InitializeAsync();
+            await viewModel.InitializeAPIAsync();
 
             var page = new PlantDetailsPage();
             page.BindingContext = viewModel;
@@ -40,7 +40,7 @@ public partial class ResultsPage : ContentPage
 
         if (selectedItem != null)
         {
-            var plant = await ViewModels.PlantDetailsPageViewModel.GetPlantDetails(selectedItem.id);
+            var plant = await ViewModels.PlantDetailsPageViewModel.GetPlantDetailsFromAPI(selectedItem.id);
             var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefaultAsync();
 
             existingUser.Plants.Add(plant);

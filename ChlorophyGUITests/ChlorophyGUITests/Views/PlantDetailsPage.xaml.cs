@@ -1,16 +1,20 @@
 using MongoDB.Driver;
 
+
 namespace ChlorophyGUITests.Views;
 
 public partial class PlantDetailsPage : ContentPage
 {
+
     public PlantDetailsPage()
     {
         InitializeComponent();
         BindingContext = new ViewModels.PlantDetailsPageViewModel();
+
     }
 
     public static string keyword = null;
+
 
     private async void OnSearchCompleted(object sender, EventArgs e)
     {
@@ -18,7 +22,7 @@ public partial class PlantDetailsPage : ContentPage
         await Navigation.PushAsync(new Views.ResultsPage());
     }
 
-    private async void OnSearchClicked(object sender, EventArgs e)
+    private async void OnBackToPreviousClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
     }
@@ -39,11 +43,18 @@ public partial class PlantDetailsPage : ContentPage
         var button = (ImageButton)sender;
         var selectedItem = button.CommandParameter as Models.PlantDetails;
 
-        var currentUser = Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefault();
-        var plant = currentUser.Plants.Find(p => p.id == selectedItem.id);
-
         DateTime wateringDate = DateTime.Now;
-        plant.WateringDate = wateringDate;
+        selectedItem.WateringDate = wateringDate;
+
+        var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefaultAsync();
+
+        int index = existingUser.Plants.FindIndex(p => p.id == selectedItem.id);
+
+        existingUser.Plants[index] = selectedItem;
+
+        var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
+        await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
 
     }
+
 }

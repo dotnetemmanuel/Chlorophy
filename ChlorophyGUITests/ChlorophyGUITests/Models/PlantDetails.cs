@@ -61,6 +61,8 @@
         public string? other_images { get; set; }
 
         public DateTime? WateringDate { get; set; } = null;
+        public int? WateringFrequency { get; set; } = null;
+        public string? WateringMessage { get; set; } = null;
     }
 
     public class WaterVolume
