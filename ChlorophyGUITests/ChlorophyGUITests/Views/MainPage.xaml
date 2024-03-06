@@ -203,14 +203,29 @@
                                                 </ImageButton>
 
                                                 <Label
+                                                    x:Name="WateringMessageLabel"
                                                     Text="{Binding WateringMessage}"
                                                     FontFamily="futurabook"
                                                     FontSize="16"
                                                     HorizontalOptions="Center"
                                                     HorizontalTextAlignment="Center"
-                                                    TextColor="#DE1548"
-                                                    Margin="0,5, 0, 0"/>
+                                                    TextColor="#054B53"
+                                                    Margin="0, 5, 0, 0">
 
+                                                    <Label.Triggers>
+                                                        <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="I need water!">
+                                                            <Setter Property="TextColor" Value="#DE1548" />
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="No watering information">
+                                                            <Setter Property="TextColor" Value="#3F8668" />
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="2 days before watering">
+                                                            <Setter Property="TextColor" Value="#3F8668" />
+                                                        </DataTrigger><DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="1 day before watering">
+                                                            <Setter Property="TextColor" Value="#3F8668" />
+                                                        </DataTrigger>
+                                                    </Label.Triggers>
+                                                </Label>
 
                                             </VerticalStackLayout>
                                         </Frame>

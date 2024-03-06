@@ -49,7 +49,8 @@
                         VerticalOptions="Center"
                         HorizontalOptions="End"
                         BackgroundColor="Transparent"
-                        HeightRequest="30">
+                        HeightRequest="30"
+                        IsVisible="False">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
@@ -68,8 +69,8 @@
                         HorizontalTextAlignment="End"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
-                        WidthRequest="85"
-                        Completed="OnSearchCompleted"/>
+                        WidthRequest="85"/>
+
                     </Border>
                 </Grid>
 

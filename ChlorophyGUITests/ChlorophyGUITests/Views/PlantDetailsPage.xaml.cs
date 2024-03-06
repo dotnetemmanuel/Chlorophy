@@ -15,13 +15,6 @@ public partial class PlantDetailsPage : ContentPage
 
     public static string keyword = null;
 
-
-    private async void OnSearchCompleted(object sender, EventArgs e)
-    {
-        keyword = Search.Text;
-        await Navigation.PushAsync(new Views.ResultsPage());
-    }
-
     private async void OnBackToPreviousClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();
@@ -43,8 +36,8 @@ public partial class PlantDetailsPage : ContentPage
         var button = (ImageButton)sender;
         var selectedItem = button.CommandParameter as Models.PlantDetails;
 
-        DateTime wateringDate = DateTime.Now;
-        selectedItem.WateringDate = wateringDate;
+        DateTime wateringDateLocalTime = DateTime.Now;
+        selectedItem.WateringDate = wateringDateLocalTime;
 
         var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefaultAsync();
 

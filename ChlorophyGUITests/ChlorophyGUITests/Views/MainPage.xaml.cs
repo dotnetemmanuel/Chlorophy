@@ -12,6 +12,7 @@ namespace ChlorophyGUITests
             BindingContext = new ViewModels.MainPageViewModel();
             HideWelcomeMessage();
             Today = DateTime.Now;
+
         }
 
         public static string keyword = null;
