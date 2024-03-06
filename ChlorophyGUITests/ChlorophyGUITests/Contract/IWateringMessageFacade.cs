@@ -1,6 +1,6 @@
 ﻿namespace ChlorophyGUITests.Contract
 {
-    interface IWateringMessage
+    interface IWateringMessageFacade
     {
         string WateringReminder(Models.PlantDetails plant);
     }

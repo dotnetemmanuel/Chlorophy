@@ -22,7 +22,7 @@ namespace ChlorophyGUITests.ViewModels
                 var task = Task.Run(() => GetCurrentUser());
                 task.Wait();
                 var currentUser = task.Result;
-                IWateringMessage _wateringMessage = new WateringMessage();
+                IWatering _watering = new Watering();
 
                 if (currentUser != null)
                 {
@@ -32,7 +32,7 @@ namespace ChlorophyGUITests.ViewModels
                         //var task2 = Task.Run(() => _wateringMessage.WateringReminder(plant));
                         //task2.Wait();
                         //plant.WateringMessage = task2.Result;
-                        plant.WateringMessage = _wateringMessage.WateringReminder(plant);
+                        plant.WateringMessage = _watering.WateringMethod(plant);
                     }
                     PlantDetails.AddRange(currentUser.Plants);
                     WelcomeMessage = $"Welcome, {currentUser.Firstname}";

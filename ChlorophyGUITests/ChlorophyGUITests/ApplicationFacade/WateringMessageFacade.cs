@@ -2,7 +2,7 @@
 
 namespace ChlorophyGUITests.Components
 {
-    internal class WateringMessage : IWateringMessage
+    internal class WateringMessageFacade : IWateringMessageFacade
     {
         public string WateringReminder(Models.PlantDetails plant)
         {
