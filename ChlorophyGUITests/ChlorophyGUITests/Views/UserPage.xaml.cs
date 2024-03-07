@@ -20,7 +20,7 @@ public partial class UserPage : ContentPage
 
     private async void OnCloseButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MainPage());
     }
 
     private async void OnHomeClicked(object sender, EventArgs e)
