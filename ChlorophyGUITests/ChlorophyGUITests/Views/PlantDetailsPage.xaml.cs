@@ -10,7 +10,6 @@ public partial class PlantDetailsPage : ContentPage
     {
         InitializeComponent();
         BindingContext = new ViewModels.PlantDetailsPageViewModel();
-
     }
 
     public static string keyword = null;
@@ -47,7 +46,5 @@ public partial class PlantDetailsPage : ContentPage
 
         var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
         await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
-
     }
-
 }

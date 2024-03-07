@@ -29,9 +29,6 @@ namespace ChlorophyGUITests.ViewModels
                     User = currentUser;
                     foreach (var plant in currentUser.Plants)
                     {
-                        //var task2 = Task.Run(() => _wateringMessage.WateringReminder(plant));
-                        //task2.Wait();
-                        //plant.WateringMessage = task2.Result;
                         plant.WateringMessage = _watering.WateringMethod(plant);
                     }
                     PlantDetails.AddRange(currentUser.Plants);
@@ -65,45 +62,5 @@ namespace ChlorophyGUITests.ViewModels
                 return null;
             }
         }
-
-        //public async Task<string> WateringReminder(PlantDetails plant)
-        //{
-        //    string wateringReminder = "";
-
-        //    //var currentUser = await GetCurrentUser();
-        //    if (plant.WateringFrequency != null)
-        //    {
-        //        if (plant.WateringDate != null)
-        //        {
-        //            if (plant.WateringDate != null)
-        //            {
-        //                TimeSpan difference = MainPage.Today.Subtract((DateTime)plant.WateringDate);
-        //                int dateDifference = difference.Days;
-
-        //                if (dateDifference != plant.WateringFrequency)
-        //                {
-        //                    if (plant.WateringFrequency - dateDifference == 1)
-        //                    {
-        //                        wateringReminder = (plant.WateringFrequency - dateDifference).ToString() + " day before watering";
-        //                    }
-        //                    else
-        //                    {
-        //                        wateringReminder = (plant.WateringFrequency - dateDifference).ToString() + " days before watering";
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    wateringReminder = "I need water!";
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        wateringReminder = "No watering information";
-        //    }
-
-        //    return wateringReminder;
-        //}
     }
 }

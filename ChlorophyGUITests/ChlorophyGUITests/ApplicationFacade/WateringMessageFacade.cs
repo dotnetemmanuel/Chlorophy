@@ -32,7 +32,6 @@ namespace ChlorophyGUITests.Components
                                 wateringReminder = "I need water!";
                             }
                         }
-
                     }
                 }
             }

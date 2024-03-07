@@ -112,6 +112,7 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
+                            
                             <Label
                                 x:Name="WelcomeText"
                                 Grid.Row="0"
@@ -132,13 +133,16 @@
                         </Grid>
                     </Frame>
 
-                    <ScrollView Padding="0, 20, 0, 0"
-                                HorizontalOptions="Center"
-                                Margin="0, 20, 0, 0">
-                        <FlexLayout Direction="Row" Wrap="Wrap"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center">
-                            <!-- Bind the FlexLayout's Children property to your PlantDetails -->
+                    <ScrollView 
+                        Padding="0, 20, 0, 0"
+                        HorizontalOptions="Center"
+                        Margin="0, 20, 0, 0">
+                        
+                        <FlexLayout 
+                            Direction="Row" Wrap="Wrap"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                            
                             <BindableLayout.ItemsSource>
                                 <Binding Path="PlantDetails"/>
                             </BindableLayout.ItemsSource>
@@ -155,6 +159,7 @@
                                        BorderColor="Transparent"
                                        BackgroundColor="#98FFFFFF"
                                        Margin="0, 0, 20, 20">
+                                        
                                         <VerticalStackLayout
                                             VerticalOptions="Center">
 
@@ -164,7 +169,8 @@
                                                 HorizontalOptions="Center"
                                                 VerticalOptions="Start"
                                                 Margin="0, 0,0,5">
-                                                <Border.Stroke >
+                                                
+                                                <Border.Stroke>
                                                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                                         <GradientStopCollection>
                                                             <GradientStop Offset="0" Color="#054B53"/>
@@ -188,8 +194,9 @@
                                                     MaximumHeightRequest="90"
                                                     MinimumWidthRequest="70"
                                                     MaximumWidthRequest="70"
-                                                    Aspect="AspectFill"/>
+                                                    Aspect="AspectFill"/>                                                
                                             </Border>
+                                            
                                             <Label
                                                 Text="{Binding common_name}"
                                                 FontFamily="bloomings"
@@ -205,8 +212,8 @@
                                                 MaximumHeightRequest="20"
                                                 MinimumHeightRequest="20"
                                                 VerticalOptions="End"
-                                                Clicked="OnDeleteButtonClicked">
-                                            </ImageButton>
+                                                Clicked="OnDeleteButtonClicked"/>
+
 
                                             <Label
                                                 x:Name="WateringMessageLabel"
@@ -223,7 +230,7 @@
                                                         <Setter Property="TextColor" Value="#DE1548" />
                                                     </DataTrigger>
                                                     <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="No watering information">
-                                                        <Setter Property="TextColor" Value="#3F8668" />
+                                                        <Setter Property="TextColor" Value="#DE1548" />
                                                     </DataTrigger>
                                                     <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="2 days before watering">
                                                         <Setter Property="TextColor" Value="#3F8668" />
@@ -233,8 +240,6 @@
                                                     </DataTrigger>
                                                 </Label.Triggers>
                                             </Label>
-
-
                                         </VerticalStackLayout>
                                     </Frame>
                                 </DataTemplate>
@@ -348,7 +353,6 @@
                 </Grid>
 
                 <Grid Grid.Row="2">
-
                     <ImageButton 
                         Source="home.png"
                         MinimumHeightRequest="30"

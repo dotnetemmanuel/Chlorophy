@@ -54,10 +54,10 @@ public partial class UserPage : ContentPage
             var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", email)).FirstOrDefaultAsync();
             if (existingUser != null)
             {
-                // User with this email already exists
+
                 ErrorMessage.Text = "A user with this email already exists.";
                 RegexCheck.IsVisible = true;
-                return; // Stop further execution
+                return;
             }
 
             Models.User user = new Models.User()

@@ -4,105 +4,101 @@
              x:Class="ChlorophyGUITests.Views.ResultsPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E4F8F7">
+    
     <ScrollView>
-    <VerticalStackLayout
-        Padding="20">
+        <VerticalStackLayout
+            Padding="20">
 
-        <Grid ColumnDefinitions="Auto, *">
-            <Label
-                Grid.Column="0"
-                Text="Search results"
-                FontFamily="futurabook"
-                FontSize="16"
-                TextColor="#054B53"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"/>
+            <Grid 
+                ColumnDefinitions="Auto, *">
+                
+                <Label
+                    Grid.Column="0"
+                    Text="Search results"
+                    FontFamily="futurabook"
+                    FontSize="16"
+                    TextColor="#054B53"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
 
-            <ImageButton
-                Grid.Column="1"
-                Source="close.png"
-                HorizontalOptions="End"
-                MinimumHeightRequest="12"
-                MaximumHeightRequest="25"
-                VerticalOptions="Center"
-                Clicked="OnCloseClicked"/>
+                <ImageButton
+                    Grid.Column="1"
+                    Source="close.png"
+                    HorizontalOptions="End"
+                    MinimumHeightRequest="12"
+                    MaximumHeightRequest="25"
+                    VerticalOptions="Center"
+                    Clicked="OnCloseClicked"/>
+            </Grid>
 
-        </Grid>
+            <ListView
+                x:Name="ListView"
+                ItemsSource="{Binding SpeciesList}" 
+                ItemSelected="OnlistViewItemSelected"
+                Margin="0,30,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid 
+                                RowDefinitions="Auto"
+                                ColumnDefinitions="100, Auto"
+                                ColumnSpacing="10"
+                                Margin="0, 0, 0, 10">
 
+                                <Border 
+                                    StrokeThickness="2">
+                                    
+                                    <Border.Stroke >
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                            <GradientStopCollection>
+                                                <GradientStop Offset="0" Color="#054B53"/>
+                                                <GradientStop Offset="0.25" Color="#3F8668"/>
+                                                <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                                <GradientStop Offset="0.75" Color="#BED082"/>
+                                                <GradientStop Offset="1" Color="#F7D984"/>
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush>
+                                    </Border.Stroke>
 
-        
-        <ListView
-            x:Name="ListView"
-            ItemsSource="{Binding SpeciesList}" 
-            ItemSelected="OnlistViewItemSelected"
-            Margin="0,30,0,0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid 
-                            RowDefinitions="Auto"
-                            ColumnDefinitions="100, Auto"
-                            ColumnSpacing="10"
-                            Margin="0, 0, 0, 10">
-                            
-                            <Border 
-                                StrokeThickness="2">
-                                <Border.Stroke >
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                        <GradientStopCollection>
-                                            <GradientStop Offset="0" Color="#054B53"/>
-                                            <GradientStop Offset="0.25" Color="#3F8668"/>
-                                            <GradientStop Offset="0.50" Color="#7CC57F"/>
-                                            <GradientStop Offset="0.75" Color="#BED082"/>
-                                            <GradientStop Offset="1" Color="#F7D984"/>
-                                        </GradientStopCollection>
-                                    </LinearGradientBrush>
-                                </Border.Stroke>
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15"/>
+                                    </Border.StrokeShape>
 
-                                <Border.StrokeShape>
-                                    <RoundRectangle CornerRadius="15"/>
-                                </Border.StrokeShape>
+                                    <Image 
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2"
+                                        Source="{Binding default_image.original_url, FallbackValue='fallback.png'}"
+                                        MinimumHeightRequest="125"
+                                        Aspect="AspectFill"/>
+                                </Border>
 
-                                <Image 
-                                Grid.Column="0"
-                                Grid.RowSpan="2"
-                                Source="{Binding default_image.original_url, FallbackValue='fallback.png'}"
-                                MinimumHeightRequest="125"
-                                Aspect="AspectFill"/>
-                            </Border>
-                            
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                Text="{Binding common_name}"
-                                FontFamily="bloomings"
-                                FontSize="20"
-                                HorizontalOptions="Start"
-                                TextColor="#054B53"/>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding common_name}"
+                                    FontFamily="bloomings"
+                                    FontSize="20"
+                                    HorizontalOptions="Start"
+                                    TextColor="#054B53"/>
 
                                 <ImageButton
-                                x:Name="AddButton"
-                                Source="add.png"
-                                Grid.Row="0"
-                                Grid.Column="1"
-                                MaximumHeightRequest="20"
-                                MinimumHeightRequest="20"
-                                MaximumWidthRequest="20"
-                                MinimumWidthRequest="20"
-                                HorizontalOptions="Start"
-                                Padding="0"
-                                Margin="0"
-                                Clicked="OnAddButtonClicked"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-
-    </VerticalStackLayout>
+                                    x:Name="AddButton"
+                                    Source="add.png"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    MaximumHeightRequest="20"
+                                    MinimumHeightRequest="20"
+                                    MaximumWidthRequest="20"
+                                    MinimumWidthRequest="20"
+                                    HorizontalOptions="Start"
+                                    Padding="0"
+                                    Margin="0"
+                                    Clicked="OnAddButtonClicked"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
     </ScrollView>
-
-
-
 </ContentPage>

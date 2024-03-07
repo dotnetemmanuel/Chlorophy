@@ -60,6 +60,7 @@
         public DefaultImage? default_image { get; set; }
         public string? other_images { get; set; }
 
+        //Own properties for date calculation. Not API
         public DateTime? WateringDate { get; set; } = null;
         public int? WateringFrequency { get; set; } = null;
         public string? WateringMessage { get; set; } = null;

@@ -5,10 +5,10 @@
              x:Class="ChlorophyGUITests.Views.PlantDetailsPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E4F8F7">
+    
     <ContentPage.BindingContext>
         <vm:PlantDetailsPageViewModel/>
     </ContentPage.BindingContext>
-
 
     <Grid>
         <Grid
@@ -22,6 +22,7 @@
                     Grid.Row="0"
                     ColumnDefinitions="Auto, *, *"
                     HorizontalOptions="FillAndExpand">
+                    
                     <Image 
                         Grid.Column="0"
                         Source="chlorophy_logo_svg.png"
@@ -38,8 +39,7 @@
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
-                        Margin="20, 0, 0, 0"
-                        />
+                        Margin="20, 0, 0, 0"/>
 
                     <Border
                         Padding="0,0,3,0"
@@ -51,26 +51,26 @@
                         BackgroundColor="Transparent"
                         HeightRequest="30"
                         IsVisible="False">
+                        
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
                         <Entry
-                        Grid.Column="2"
-                        x:Name="Search"
-                        Text=""
-                        Placeholder="Search"
-                        PlaceholderColor="#BFBFBF"
-                        BackgroundColor="#FFFFFF"
-                        FontSize="11"
-                        FontFamily="futurabook"
-                        TextColor="#383838"
-                        VerticalTextAlignment="Start"
-                        HorizontalTextAlignment="End"
-                        HorizontalOptions="Fill"
-                        VerticalOptions="Center"
-                        WidthRequest="85"/>
-
+                            Grid.Column="2"
+                            x:Name="Search"
+                            Text=""
+                            Placeholder="Search"
+                            PlaceholderColor="#BFBFBF"
+                            BackgroundColor="#FFFFFF"
+                            FontSize="11"
+                            FontFamily="futurabook"
+                            TextColor="#383838"
+                            VerticalTextAlignment="Start"
+                            HorizontalTextAlignment="End"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Center"
+                            WidthRequest="85"/>
                     </Border>
                 </Grid>
 
@@ -116,6 +116,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
+                            
                             <Label 
                                 Grid.Row="0"
                                 Text="{Binding Plant.common_name}"
@@ -124,7 +125,6 @@
                                 FontFamily="bloomings"
                                 VerticalOptions="Center"
                                 HorizontalOptions="Center"/>
-                           
                         </Grid>
                     </Frame>
                 </Grid>
@@ -135,20 +135,21 @@
                     ColumnDefinitions=".5*, .5*">
 
                     <Border 
-                            Padding="15,0,15,0"
-                            Grid.Column="0"
-                            Stroke="#3F8668"                        
-                            StrokeThickness="1.5"
-                            VerticalOptions="Center"
-                            HorizontalOptions="Start"
-                            BackgroundColor="Transparent"
-                            HeightRequest="50">
+                        Padding="15,0,15,0"
+                        Grid.Column="0"
+                        Stroke="#3F8668"                        
+                        StrokeThickness="1.5"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        HeightRequest="50">
 
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
                         
-                        <Grid ColumnDefinitions="30, Auto">
+                        <Grid 
+                            ColumnDefinitions="30, Auto">
                                                   
                         <Image
                             Grid.Column="0"
@@ -180,7 +181,8 @@
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
-                        <Grid ColumnDefinitions="30, Auto">
+                        <Grid 
+                            ColumnDefinitions="30, Auto">
 
                             <Image
                                 Grid.Column="0"
@@ -197,7 +199,6 @@
                                 Margin="10, 0, 0, 0"/>
                         </Grid>
                     </Border>
-
                 </Grid>
 
                 <Grid 
@@ -219,27 +220,30 @@
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
-                        <Grid ColumnDefinitions="30, Auto">
+                        <Grid 
+                            ColumnDefinitions="30, Auto">
 
                             <Image
                                 Grid.Column="0"
                                 Source="sun.png"
                                 HeightRequest="30"
                                 HorizontalOptions="Start"/>
+                            
                             <Label
                                 Grid.Column="1"
-                                
                                 FontFamily="futurabook"
                                 FontSize="16"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
                                 Margin="10, 0, 0, 0">
+                                
                                 <Label.Text>
                                     <MultiBinding StringFormat="{}{0}, {1}">
                                         <Binding Path="Plant.sunlight[0]"/>
                                         <Binding Path="Plant.sunlight[1]"/>                                        
                                     </MultiBinding>
                                 </Label.Text>
+                                
                             </Label>
                         </Grid>
                     </Border>
@@ -258,7 +262,8 @@
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
-                        <Grid ColumnDefinitions="30, Auto">
+                        <Grid 
+                            ColumnDefinitions="30, Auto">
 
                             <Image
                                 Grid.Column="0"
@@ -275,7 +280,6 @@
                                 Margin="10, 0, 0, 0"/>
                         </Grid>
                     </Border>
-
                 </Grid>
 
                 <Grid 
@@ -297,27 +301,30 @@
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
 
-                        <Grid ColumnDefinitions="30, Auto">
+                        <Grid 
+                            ColumnDefinitions="30, Auto">
 
                             <Image
                                 Grid.Column="0"
                                 Source="recyclewater.png"
                                 HeightRequest="30"
                                 HorizontalOptions="Start"/>
+                            
                             <Label
                                 Grid.Column="1"
-                
                                 FontFamily="futurabook"
                                 FontSize="16"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
                                 Margin="10, 0, 0, 0">
+                                
                                 <Label.Text>
                                     <MultiBinding StringFormat="{}{0} {1}">
                                         <Binding Path="Plant.watering_general_benchmark.value"/>
                                         <Binding Path="Plant.watering_general_benchmark.unit"/>
                                     </MultiBinding>
                                 </Label.Text>
+                                
                             </Label>
                         </Grid>
                     </Border>                 
@@ -334,11 +341,13 @@
                         Margin="0, 15, 0, 0"
                         Clicked="OnBackToPreviousClicked"/>
                     
-                    <Border HorizontalOptions="Center"
-                            BackgroundColor="#3F8668"
-                            HeightRequest="60"
-                            WidthRequest="60"
-                            Stroke="Transparent">
+                    <Border 
+                        HorizontalOptions="Center"
+                        BackgroundColor="#3F8668"
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        Stroke="Transparent">
+                        
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
@@ -364,8 +373,7 @@
                         HorizontalOptions="End"
                         VerticalOptions="Center"
                         Margin="0, 15, 0 , 0"
-                        Clicked="OnUserClicked"/>
-                        
+                        Clicked="OnUserClicked"/>                       
                 </Grid>
             </Grid>
         </Grid>

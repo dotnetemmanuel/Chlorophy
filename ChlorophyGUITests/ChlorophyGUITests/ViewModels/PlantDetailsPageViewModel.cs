@@ -24,7 +24,6 @@ namespace ChlorophyGUITests.ViewModels
             Plant = await GetPlantDetailsFromDb(SpeciesId);
         }
 
-
         public void SetSpeciesId(int speciesId)
         {
             SpeciesId = speciesId;
@@ -80,7 +79,5 @@ namespace ChlorophyGUITests.ViewModels
 
             return plant;
         }
-
-
     }
 }

@@ -16,6 +16,7 @@
                     Grid.Row="0"
                     ColumnDefinitions="Auto, *, *"
                     HorizontalOptions="FillAndExpand">
+                    
                     <Image 
                         Grid.Column="0"
                         Source="chlorophy_logo_svg.png"
@@ -32,16 +33,15 @@
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
-                        Margin="20, 0, 0, 0"
-                        />
+                        Margin="20, 0, 0, 0"/>
 
                     <ImageButton
-                            Grid.Column="2"
-                            Source="close.png"
-                            MaximumHeightRequest="30"
-                            MinimumHeightRequest="30"
-                            HorizontalOptions="End"
-                            Clicked="OnCloseButtonClicked"/>
+                        Grid.Column="2"
+                        Source="close.png"
+                        MaximumHeightRequest="30"
+                        MinimumHeightRequest="30"
+                        HorizontalOptions="End"
+                        Clicked="OnCloseButtonClicked"/>
                 </Grid>
 
                 <VerticalStackLayout
@@ -313,7 +313,6 @@
                             FontSize="15"
                             TextColor="#DE1548"/>
                     </Grid>
-                    
                 </VerticalStackLayout>
 
                 <VerticalStackLayout
@@ -321,6 +320,7 @@
                     Grid.Row="1"
                     IsVisible="False"
                     VerticalOptions="Center">
+                    
                     <Label
                         Text="Signed in as:"
                         FontFamily="bloomings"
@@ -361,10 +361,10 @@
                         CornerRadius="22"
                         HorizontalOptions="Center"
                         Clicked="OnLogOutClicked"/>
-
                 </VerticalStackLayout>
 
-                <Grid Grid.Row="2">
+                <Grid 
+                    Grid.Row="2">
 
                     <ImageButton 
                         Source="home.png"
