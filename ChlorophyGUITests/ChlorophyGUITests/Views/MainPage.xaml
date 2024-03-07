@@ -132,7 +132,117 @@
                         </Grid>
                     </Frame>
 
-                    <ScrollView>
+                    <ScrollView Padding="0, 20, 0, 0"
+                                HorizontalOptions="Center"
+                                Margin="0, 20, 0, 0">
+                        <FlexLayout Direction="Row" Wrap="Wrap"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                            <!-- Bind the FlexLayout's Children property to your PlantDetails -->
+                            <BindableLayout.ItemsSource>
+                                <Binding Path="PlantDetails"/>
+                            </BindableLayout.ItemsSource>
+
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate >
+                                    <Frame
+                                       CornerRadius="20"
+                                       MaximumHeightRequest="370"
+                                       MinimumHeightRequest="270"
+                                       MinimumWidthRequest="170"
+                                       MaximumWidthRequest="170"
+                                       HorizontalOptions="Center"
+                                       BorderColor="Transparent"
+                                       BackgroundColor="#98FFFFFF"
+                                       Margin="0, 0, 20, 10">
+                                        <VerticalStackLayout
+                                            VerticalOptions="Center">
+
+                                            <Border 
+                                                StrokeThickness="2"
+                                                WidthRequest="70"
+                                                HorizontalOptions="Center"
+                                                VerticalOptions="Start"
+                                                Margin="0, 0,0,5">
+                                                <Border.Stroke >
+                                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                        <GradientStopCollection>
+                                                            <GradientStop Offset="0" Color="#054B53"/>
+                                                            <GradientStop Offset="0.25" Color="#3F8668"/>
+                                                            <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                                            <GradientStop Offset="0.75" Color="#BED082"/>
+                                                            <GradientStop Offset="1" Color="#F7D984"/>
+                                                        </GradientStopCollection>
+                                                    </LinearGradientBrush>
+                                                </Border.Stroke>
+
+                                                <Border.StrokeShape>
+                                                    <RoundRectangle CornerRadius="15"/>
+                                                </Border.StrokeShape>
+
+                                                <Image 
+                                                    Grid.Column="0"
+                                                    Grid.RowSpan="2"
+                                                    Source="{Binding default_image.small_url, FallbackValue='fallback.png'}"
+                                                    MinimumHeightRequest="90"
+                                                    MaximumHeightRequest="90"
+                                                    MinimumWidthRequest="70"
+                                                    MaximumWidthRequest="70"
+                                                    Aspect="AspectFill"/>
+                                            </Border>
+                                            <Label
+                                                Text="{Binding common_name}"
+                                                FontFamily="bloomings"
+                                                FontSize="20"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                TextColor="#054B53"
+                                                Margin="0,0,0,10"/>
+
+                                            <ImageButton
+                                                Margin="0,0,0,5"
+                                                Source="minus.png"
+                                                MaximumHeightRequest="20"
+                                                MinimumHeightRequest="20"
+                                                VerticalOptions="End"
+                                                Clicked="OnDeleteButtonClicked">
+                                            </ImageButton>
+
+                                            <Label
+                                                x:Name="WateringMessageLabel"
+                                                Text="{Binding WateringMessage}"
+                                                FontFamily="futurabook"
+                                                FontSize="16"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                TextColor="#054B53"
+                                                Margin="0, 5, 0, 0">
+
+                                                <Label.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="I need water!">
+                                                        <Setter Property="TextColor" Value="#DE1548" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="No watering information">
+                                                        <Setter Property="TextColor" Value="#3F8668" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="2 days before watering">
+                                                        <Setter Property="TextColor" Value="#3F8668" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="1 day before watering">
+                                                        <Setter Property="TextColor" Value="#3F8668" />
+                                                    </DataTrigger>
+                                                </Label.Triggers>
+                                            </Label>
+
+
+                                        </VerticalStackLayout>
+                                    </Frame>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </FlexLayout>
+                    </ScrollView>
+
+                    <!--<ScrollView>
                         <ListView
                             Grid.Row="0"
                             Grid.Column="0"
@@ -234,7 +344,7 @@
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
-                    </ScrollView>
+                    </ScrollView>-->
                 </Grid>
 
                 <Grid Grid.Row="2">
