@@ -70,7 +70,7 @@
                 <Grid 
                     Grid.Row="1"
                     Margin="0, 15, 0, 0">
-                   
+
                     <Border 
                         StrokeThickness="2.5">
 
@@ -221,7 +221,8 @@
                                                         </DataTrigger>
                                                         <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="2 days before watering">
                                                             <Setter Property="TextColor" Value="#3F8668" />
-                                                        </DataTrigger><DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="1 day before watering">
+                                                        </DataTrigger>
+                                                        <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="1 day before watering">
                                                             <Setter Property="TextColor" Value="#3F8668" />
                                                         </DataTrigger>
                                                     </Label.Triggers>
@@ -246,7 +247,7 @@
                         VerticalOptions="Center"
                         Margin="0, 15, 0, 0"
                         Clicked="OnHomeClicked"/>
-                    
+
                     <ImageButton
                         Source="user.png"
                         MinimumHeightRequest="30"
