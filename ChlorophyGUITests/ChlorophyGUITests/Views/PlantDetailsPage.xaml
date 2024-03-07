@@ -342,6 +342,7 @@
                         Clicked="OnBackToPreviousClicked"/>
                     
                     <Border 
+                        x:Name="WateringBorder"
                         HorizontalOptions="Center"
                         BackgroundColor="#3F8668"
                         HeightRequest="60"
@@ -363,7 +364,9 @@
                             BackgroundColor="Transparent"
                             Margin="0, 15, 0, 0"
                             IsVisible="true"
-                            Clicked="OnWateringButtonClicked"/>
+                            Clicked="OnWateringButtonClicked"
+                            Pressed="OnWateringButtonPressed"
+                            Released="OnWateringButtonReleased"/>
                     </Border>
 
                     <ImageButton

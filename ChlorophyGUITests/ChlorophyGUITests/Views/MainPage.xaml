@@ -4,7 +4,7 @@
              x:Class="ChlorophyGUITests.MainPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E4F8F7">
-
+    
     <Grid>
         <Grid
             Padding="20, 20, 20, 20"
@@ -139,6 +139,7 @@
                         Margin="0, 20, 0, 0">
                         
                         <FlexLayout 
+                            x:Name="flexLayout"
                             Direction="Row" Wrap="Wrap"
                             HorizontalOptions="Center"
                             VerticalOptions="Center">
@@ -147,7 +148,7 @@
                                 <Binding Path="PlantDetails"/>
                             </BindableLayout.ItemsSource>
 
-                            <BindableLayout.ItemTemplate>
+                            <BindableLayout.ItemTemplate >
                                 <DataTemplate >
                                     <Frame
                                        CornerRadius="20"
@@ -159,7 +160,10 @@
                                        BorderColor="Transparent"
                                        BackgroundColor="#98FFFFFF"
                                        Margin="0, 0, 20, 20">
-                                        
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnItemTapped" />
+                                        </Frame.GestureRecognizers>
+
                                         <VerticalStackLayout
                                             VerticalOptions="Center">
 

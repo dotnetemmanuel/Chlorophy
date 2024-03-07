@@ -40,11 +40,26 @@ public partial class PlantDetailsPage : ContentPage
 
         var existingUser = await Data.Database.ProductCollection().Find(Builders<Models.User>.Filter.Eq("Email", Views.UserPage.SignedInUserEmail)).FirstOrDefaultAsync();
 
-        int index = existingUser.Plants.FindIndex(p => p.id == selectedItem.id);
+        if (existingUser.Plants.Any(p => p.id == selectedItem.id))
+        {
+            int index = existingUser.Plants.FindIndex(p => p.id == selectedItem.id);
 
-        existingUser.Plants[index] = selectedItem;
+            existingUser.Plants[index] = selectedItem;
 
-        var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
-        await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
+            var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
+            await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
+        }
+    }
+
+    private void OnWateringButtonPressed(object sender, EventArgs e)
+    {
+        WateringBorder.BackgroundColor = Color.FromHex("#068192");
+        WateringBorder.Scale = 1.2;
+    }
+
+    private void OnWateringButtonReleased(object sender, EventArgs e)
+    {
+        WateringBorder.BackgroundColor = Color.FromHex("#3F8668");
+        WateringBorder.Scale = 1;
     }
 }

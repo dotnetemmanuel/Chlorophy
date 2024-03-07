@@ -48,21 +48,6 @@ namespace ChlorophyGUITests
             }
         }
 
-        private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var plant = ((ListView)sender).SelectedItem as Models.PlantDetails;
-            if (plant != null)
-            {
-                var viewModel = new ViewModels.PlantDetailsPageViewModel();
-                viewModel.SetSpeciesId((int)plant.id);
-                await viewModel.InitializeDbAsync();
-
-                var page = new Views.PlantDetailsPage();
-                page.BindingContext = viewModel;
-                await Navigation.PushAsync(page);
-            }
-        }
-
         private async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
             var button = (ImageButton)sender;
@@ -80,6 +65,22 @@ namespace ChlorophyGUITests
                 await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
 
                 await Navigation.PushAsync(new MainPage());
+            }
+        }
+
+        private async void OnItemTapped(object sender, TappedEventArgs e)
+        {
+            var frame = sender as Frame;
+            var plant = frame.BindingContext as Models.PlantDetails;
+            if (plant != null)
+            {
+                var viewModel = new ViewModels.PlantDetailsPageViewModel();
+                viewModel.SetSpeciesId((int)plant.id);
+                await viewModel.InitializeDbAsync();
+
+                var page = new Views.PlantDetailsPage();
+                page.BindingContext = viewModel;
+                await Navigation.PushAsync(page);
             }
         }
     }
