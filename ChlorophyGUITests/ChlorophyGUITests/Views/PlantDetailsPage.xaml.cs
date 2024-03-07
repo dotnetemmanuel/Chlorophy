@@ -48,6 +48,7 @@ public partial class PlantDetailsPage : ContentPage
 
             var filter = Builders<Models.User>.Filter.Eq(x => x.Email, existingUser.Email);
             await Data.Database.ProductCollection().ReplaceOneAsync(filter, existingUser);
+            await Navigation.PushAsync(new MainPage());
         }
     }
 
