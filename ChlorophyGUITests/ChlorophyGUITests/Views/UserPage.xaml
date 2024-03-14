@@ -76,7 +76,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailSignIn"
-                            Text="emmanuel.duchene@gmail.com"
+                            Text=""
                             Placeholder="Email"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -108,7 +108,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordSignIn"
-                            Text="abc123"
+                            Text=""
                             Placeholder="Password"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -170,7 +170,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="FirstnameCreate"
-                            Text="Emmanuel"
+                            Text=""
                             Placeholder="Firstname"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -202,7 +202,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="LastnameCreate"
-                            Text="Duchene"
+                            Text=""
                             Placeholder="Lastname"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -234,7 +234,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailCreate"
-                            Text="emmanuel.duchene@gmail.com"
+                            Text=""
                             Placeholder="E-mail"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
@@ -266,7 +266,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordCreate"
-                            Text="abc123"
+                            Text=""
                             Placeholder="Password"
                             PlaceholderColor="#BFBFBF"
                             FontSize="11"
