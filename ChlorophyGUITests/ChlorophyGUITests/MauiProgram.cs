@@ -21,7 +21,24 @@ namespace ChlorophyGUITests
             builder.Logging.AddDebug();
 #endif
 
+            SetHandler();
+
+
             return builder.Build();
+        }
+
+        private static void SetHandler()
+        {
+
+            Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("MyCustomization", (handler, view) =>
+            {
+                if (view is Entry)
+                {
+#if ANDROID
+handler.PlatformView.Background = null;
+#endif
+                }
+            });
         }
     }
 }

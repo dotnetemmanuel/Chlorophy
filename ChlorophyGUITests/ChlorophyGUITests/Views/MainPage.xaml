@@ -39,11 +39,11 @@
                         Padding="0,0,3,0"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
-                        StrokeThickness="1.5"
+                        StrokeThickness="{OnPlatform Android= '1.5', WinUI='1.5'}"
                         VerticalOptions="Center"
                         HorizontalOptions="End"
-                        BackgroundColor="Transparent"
-                        HeightRequest="30">
+                        BackgroundColor="#FFFFFF"
+                        HeightRequest="{OnPlatform Android='35', WinUI='30'}">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="50"/>
                         </Border.StrokeShape>
@@ -53,16 +53,18 @@
                         x:Name="Search"
                         Text=""
                         Placeholder="Search"
-                        PlaceholderColor="#BFBFBF"
-                        BackgroundColor="#FFFFFF"
-                        FontSize="11"
+                        PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                        BackgroundColor="Transparent"
+                        FontSize="{OnPlatform Android='12', WinUI='11'}"
                         FontFamily="futurabook"
                         TextColor="#383838"
+                        FontAttributes="{OnPlatform Android='Bold'}"
                         VerticalTextAlignment="Start"
                         HorizontalTextAlignment="End"
                         HorizontalOptions="Fill"
                         VerticalOptions="Center"
                         WidthRequest="85"
+                        HeightRequest="{OnPlatform Android='35'}"
                         Completed="OnSearchCompleted"/>
                     </Border>
                 </Grid>
@@ -363,7 +365,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0, 0"
+                        Margin="{OnPlatform Android='-320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnHomeClicked"/>
 
                     <ImageButton
@@ -372,7 +374,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0 , 0"
+                        Margin="{OnPlatform Android='320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnUserClicked"/>
                 </Grid>
             </Grid>

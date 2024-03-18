@@ -41,6 +41,7 @@
                         MaximumHeightRequest="30"
                         MinimumHeightRequest="30"
                         HorizontalOptions="End"
+                        Margin="{OnPlatform Android= '120, 0, 0, 0'}"
                         Clicked="OnCloseButtonClicked"/>
                 </Grid>
 
@@ -58,14 +59,14 @@
                         HorizontalOptions="Center"/>
 
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
                         
@@ -76,9 +77,10 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailSignIn"
-                            Text=""
+                            Text="emmanuel.duchene@gmail.com"
                             Placeholder="Email"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -86,18 +88,19 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
                     
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
     
@@ -108,9 +111,10 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordSignIn"
-                            Text=""
+                            Text="abc123"
                             Placeholder="Password"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -118,7 +122,8 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
 
                     <Button
@@ -152,14 +157,14 @@
                         Margin="0,30,0,0"/>
 
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -172,7 +177,8 @@
                             x:Name="FirstnameCreate"
                             Text=""
                             Placeholder="Firstname"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"                            
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -180,18 +186,19 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
                     
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -204,7 +211,8 @@
                             x:Name="LastnameCreate"
                             Text=""
                             Placeholder="Lastname"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -212,18 +220,19 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
                     
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -236,7 +245,8 @@
                             x:Name="EmailCreate"
                             Text=""
                             Placeholder="E-mail"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -244,18 +254,19 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
                     
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="30"
+                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -268,7 +279,8 @@
                             x:Name="PasswordCreate"
                             Text=""
                             Placeholder="Password"
-                            PlaceholderColor="#BFBFBF"
+                            PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
+                            FontAttributes="{OnPlatform Android='Bold'}"
                             FontSize="11"
                             FontFamily="futurabook"
                             TextColor="#383838"
@@ -276,7 +288,8 @@
                             HorizontalTextAlignment="End"
                             HorizontalOptions="Fill"
                             VerticalOptions="Center"
-                            WidthRequest="200"/>
+                            WidthRequest="200"
+                            HeightRequest="{OnPlatform Android='35', WinUI='30'}"/>
                     </Border>
 
                     <Button
@@ -372,7 +385,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0, 0"
+                        Margin="{OnPlatform Android='-320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnHomeClicked"/>
 
                     <ImageButton
@@ -381,7 +394,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0 , 0"
+                        Margin="{OnPlatform Android='320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnUserClicked"/>
                 </Grid>
             </Grid>

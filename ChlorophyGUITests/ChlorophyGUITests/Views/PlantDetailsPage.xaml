@@ -132,10 +132,11 @@
                 <Grid 
                     Grid.Row="2"
                     Margin="0, 15, 0, 0"
-                    ColumnDefinitions=".5*, .5*">
+                    ColumnDefinitions="{OnPlatform Android='Auto, Auto', WinUI='.5*, .5*'}"
+                    ColumnSpacing="{OnPlatform Android='10'}">
 
                     <Border 
-                        Padding="15,0,15,0"
+                        Padding="{OnPlatform Android='10, 0, 10, 0', WinUI='15,0,15,0'}"
                         Grid.Column="0"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -149,26 +150,26 @@
                         </Border.StrokeShape>
                         
                         <Grid 
-                            ColumnDefinitions="30, Auto">
+                            ColumnDefinitions="{OnPlatform Android='25, Auto', WinUI='30, Auto'}">
                                                   
                         <Image
                             Grid.Column="0"
                             Source="ecology.png"
-                            HeightRequest="30"
+                            HeightRequest="{OnPlatform Android='25', WinUI='30'}"
                             HorizontalOptions="Start"/>
                         <Label
                             Grid.Column="1"
                             Text="{Binding Plant.cycle}"
                             FontFamily="futurabook"
-                            FontSize="16"
+                            FontSize="{OnPlatform Android='15', WinUI='16'}"
                             TextColor="#3F8668"
                             VerticalOptions="Center"
-                            Margin="10, 0, 0, 0"/>
+                            Margin="5, 0, 0, 0"/>
                         </Grid>
                     </Border>
 
                     <Border 
-                        Padding="15,0,15,0"
+                        Padding="{OnPlatform Android='10, 0, 10, 0', WinUI='15,0,15,0'}"
                         Grid.Column="1"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -182,21 +183,21 @@
                         </Border.StrokeShape>
 
                         <Grid 
-                            ColumnDefinitions="30, Auto">
+                            ColumnDefinitions="{OnPlatform Android='25, Auto', WinUI='30, Auto'}">
 
                             <Image
                                 Grid.Column="0"
                                 Source="tag.png"
-                                HeightRequest="30"
+                                HeightRequest="{OnPlatform Android='25', WinUI='30'}"
                                 HorizontalOptions="Start"/>
                             <Label
                                 Grid.Column="1"
                                 Text="{Binding Plant.common_name}"
                                 FontFamily="futurabook"
-                                FontSize="16"
+                                FontSize="{OnPlatform Android='15', WinUI='16'}"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
-                                Margin="10, 0, 0, 0"/>
+                                Margin="{OnPlatform Android='5, 0, 0, 0', WinUI='10, 0, 0, 0'}"/>
                         </Grid>
                     </Border>
                 </Grid>
@@ -204,10 +205,11 @@
                 <Grid 
                     Grid.Row="3"
                     Margin="0, 15, 0, 0"
-                    ColumnDefinitions=".5*, .5*">
+                    ColumnDefinitions="{OnPlatform Android='Auto, Auto', WinUI='.5*, .5*'}"
+                    ColumnSpacing="{OnPlatform Android='10'}">
 
                     <Border 
-                        Padding="15,0,15,0"
+                        Padding="{OnPlatform Android='10, 0, 10, 0', WinUI='15,0,15,0'}"
                         Grid.Column="0"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -221,21 +223,21 @@
                         </Border.StrokeShape>
 
                         <Grid 
-                            ColumnDefinitions="30, Auto">
+                            ColumnDefinitions="{OnPlatform Android='25, Auto', WinUI='30, Auto'}">
 
                             <Image
                                 Grid.Column="0"
                                 Source="sun.png"
-                                HeightRequest="30"
+                                HeightRequest="{OnPlatform Android='25', WinUI='30'}"
                                 HorizontalOptions="Start"/>
                             
                             <Label
                                 Grid.Column="1"
                                 FontFamily="futurabook"
-                                FontSize="16"
+                                FontSize="{OnPlatform Android='15', WinUI='16'}"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
-                                Margin="10, 0, 0, 0">
+                                Margin="{OnPlatform Android='5, 0, 0, 0', WinUI='10, 0, 0, 0'}">
                                 
                                 <Label.Text>
                                     <MultiBinding StringFormat="{}{0}, {1}">
@@ -249,7 +251,7 @@
                     </Border>
 
                     <Border 
-                        Padding="15,0,15,0"
+                        Padding="{OnPlatform Android='10, 0, 10, 0', WinUI='15,0,15,0'}"
                         Grid.Column="1"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -263,21 +265,21 @@
                         </Border.StrokeShape>
 
                         <Grid 
-                            ColumnDefinitions="30, Auto">
+                            ColumnDefinitions="{OnPlatform Android='25, Auto', WinUI='30, Auto'}">
 
                             <Image
                                 Grid.Column="0"
                                 Source="shop.png"
-                                HeightRequest="30"
+                                HeightRequest="{OnPlatform Android='25', WinUI='30'}"
                                 HorizontalOptions="Start"/>
                             <Label
                                 Grid.Column="1"
                                 Text="{Binding Plant.family}"
                                 FontFamily="futurabook"
-                                FontSize="16"
+                                FontSize="{OnPlatform Android='15', WinUI='16'}"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
-                                Margin="10, 0, 0, 0"/>
+                                Margin="{OnPlatform Android='5, 0, 0, 0', WinUI='10, 0, 0, 0'}"/>
                         </Grid>
                     </Border>
                 </Grid>
@@ -285,10 +287,11 @@
                 <Grid 
                     Grid.Row="4"
                     Margin="0, 15, 0, 0"
-                    ColumnDefinitions=".5*, .5*">
+                    ColumnDefinitions="{OnPlatform Android='Auto, Auto', WinUI='.5*, .5*'}"
+                    ColumnSpacing="{OnPlatform Android='10'}">
 
                     <Border 
-                        Padding="15,0,15,0"
+                        Padding="{OnPlatform Android='10, 0, 10, 0', WinUI='15,0,15,0'}"
                         Grid.Column="0"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
@@ -302,21 +305,21 @@
                         </Border.StrokeShape>
 
                         <Grid 
-                            ColumnDefinitions="30, Auto">
+                            ColumnDefinitions="{OnPlatform Android='25, Auto', WinUI='30, Auto'}">
 
                             <Image
                                 Grid.Column="0"
                                 Source="recyclewater.png"
-                                HeightRequest="30"
+                                HeightRequest="{OnPlatform Android='25', WinUI='30'}"
                                 HorizontalOptions="Start"/>
                             
                             <Label
                                 Grid.Column="1"
                                 FontFamily="futurabook"
-                                FontSize="16"
+                                FontSize="{OnPlatform Android='15', WinUI='16'}"
                                 TextColor="#3F8668"
                                 VerticalOptions="Center"
-                                Margin="10, 0, 0, 0">
+                                Margin="{OnPlatform Android='5, 0, 0, 0', WinUI='10, 0, 0, 0'}">
                                 
                                 <Label.Text>
                                     <MultiBinding StringFormat="{}{0} {1}">
@@ -338,7 +341,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0, 0"
+                        Margin="{OnPlatform Android='-320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnBackToPreviousClicked"/>
                     
                     <Border 
@@ -375,7 +378,7 @@
                         MaximumHeightRequest="30"
                         HorizontalOptions="End"
                         VerticalOptions="Center"
-                        Margin="0, 15, 0 , 0"
+                        Margin="{OnPlatform Android='320, 15, 0, 0', WinUI= '0, 15, 0, 0'}"
                         Clicked="OnUserClicked"/>                       
                 </Grid>
             </Grid>

@@ -10,7 +10,8 @@
             Padding="20">
 
             <Grid 
-                ColumnDefinitions="Auto, *">
+                ColumnDefinitions="Auto, *"
+                Margin="0,0,0,10">
                 
                 <Label
                     Grid.Column="0"
@@ -28,6 +29,7 @@
                     MinimumHeightRequest="12"
                     MaximumHeightRequest="25"
                     VerticalOptions="Center"
+                    Margin="{OnPlatform Android= '230, 0, 0, 0'}"
                     Clicked="OnCloseClicked"/>
             </Grid>
 
@@ -35,12 +37,13 @@
                 x:Name="ListView"
                 ItemsSource="{Binding SpeciesList}" 
                 ItemSelected="OnlistViewItemSelected"
-                Margin="0,30,0,0">
+                Margin="0,30,0,0"
+                IsVisible="{OnPlatform Android='False'}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid 
-                                RowDefinitions="Auto"
+                            <Grid
+                                RowDefinitions="{OnPlatform Android='*', WinUI='Auto'}"
                                 ColumnDefinitions="100, Auto"
                                 ColumnSpacing="10"
                                 Margin="0, 0, 0, 10">
@@ -84,7 +87,7 @@
                                 <ImageButton
                                     x:Name="AddButton"
                                     Source="add.png"
-                                    Grid.Row="0"
+                                    Grid.Row="{OnPlatform Android='0', WinUI='0'}"
                                     Grid.Column="1"
                                     MaximumHeightRequest="20"
                                     MinimumHeightRequest="20"
@@ -99,6 +102,85 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <CollectionView 
+                ItemsSource="{Binding SpeciesList}" 
+                SelectionMode="Single" 
+                IsVisible="{OnPlatform Android='True'}" 
+                SelectionChanged="OnCollectionViewItemSelected">
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid 
+                            RowDefinitions="125, Auto"
+                            ColumnDefinitions="100, *"
+                            ColumnSpacing="10"
+                            Margin="0, 0, 0, 10">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">
+                                    <VisualState Name="Normal"></VisualState>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="#BFD4D2"></Setter>
+                                        </VisualState.Setters>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border 
+                                StrokeThickness="2">
+
+                                <Border.Stroke >
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStopCollection>
+                                            <GradientStop Offset="0" Color="#054B53"/>
+                                            <GradientStop Offset="0.25" Color="#3F8668"/>
+                                            <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                            <GradientStop Offset="0.75" Color="#BED082"/>
+                                            <GradientStop Offset="1" Color="#F7D984"/>
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Border.Stroke>
+
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15"/>
+                                </Border.StrokeShape>
+
+                                <Image 
+                                    Grid.Column="0"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding default_image.original_url, FallbackValue='fallback.png'}"
+                                    MinimumHeightRequest="125"
+                                    Aspect="AspectFill"/>
+                            </Border>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding common_name}"
+                                LineBreakMode="WordWrap"
+                                FontFamily="bloomings"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                TextColor="#054B53"/>
+
+                            <ImageButton
+                                x:Name="AddButton"
+                                Source="add.png"
+                                Grid.Row="{OnPlatform Android='0', WinUI='0'}"
+                                Grid.Column="1"
+                                MaximumHeightRequest="30"
+                                MinimumHeightRequest="30"
+                                MaximumWidthRequest="20"
+                                MinimumWidthRequest="20"
+                                HorizontalOptions="Start"
+                                Padding="0"
+                                Margin="0, 10, 0, 0"
+                                Clicked="OnAddButtonClicked"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
