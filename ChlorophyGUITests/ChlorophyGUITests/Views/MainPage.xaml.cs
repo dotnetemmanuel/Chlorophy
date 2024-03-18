@@ -83,5 +83,20 @@ namespace ChlorophyGUITests
                 await Navigation.PushAsync(page);
             }
         }
+
+        private async void OnCollectionViewItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+            var species = e.CurrentSelection.FirstOrDefault() as Models.PlantDetails;
+            if (species != null)
+            {
+                var viewModel = new ViewModels.PlantDetailsPageViewModel();
+                viewModel.SetSpeciesId((int)species.id);
+                await viewModel.InitializeAPIAsync();
+
+                var page = new Views.PlantDetailsPage();
+                page.BindingContext = viewModel;
+                await Navigation.PushAsync(page);
+            }
+        }
     }
 }

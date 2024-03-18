@@ -53,9 +53,6 @@ public partial class ResultsPage : ContentPage
 
     private async void OnCollectionViewItemSelected(object sender, SelectionChangedEventArgs e)
     {
-        var collectionView = (CollectionView)sender;
-        //collectionView.BackgroundColor = Microsoft.Maui.Graphics.Colors.Transparent;
-
         var species = e.CurrentSelection.FirstOrDefault() as Models.Species;
         if (species != null)
         {
@@ -66,9 +63,6 @@ public partial class ResultsPage : ContentPage
             var page = new PlantDetailsPage();
             page.BindingContext = viewModel;
             await Navigation.PushAsync(page);
-
-
         }
-
     }
 }

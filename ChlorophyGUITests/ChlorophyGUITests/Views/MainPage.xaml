@@ -4,6 +4,11 @@
              x:Class="ChlorophyGUITests.MainPage"
              Shell.NavBarIsVisible="False"
              BackgroundColor="#E4F8F7">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <RoundRectangleGeometry x:Key="RoundRectClip" CornerRadius="15"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
     <Grid>
         <Grid
@@ -138,7 +143,8 @@
                     <ScrollView 
                         Padding="0, 20, 0, 0"
                         HorizontalOptions="Center"
-                        Margin="0, 20, 0, 0">
+                        Margin="0, 20, 0, 0"
+                        IsVisible="{OnPlatform Android='False'}">
                         
                         <FlexLayout 
                             x:Name="flexLayout"
@@ -252,6 +258,133 @@
                             </BindableLayout.ItemTemplate>
                         </FlexLayout>
                     </ScrollView>
+
+                    <CollectionView
+                        ItemsSource="{Binding PlantDetails}"
+                        SelectionChanged="OnCollectionViewItemSelected"
+                        SelectionMode="Single"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Start"
+                        IsVisible="{OnPlatform WinUI='False', Android='True'}">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Border
+                                    HorizontalOptions="Center"
+                                    Margin="20, 20, 20, 0"
+                                    Stroke="Transparent">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal"></VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="#BFD4D2"></Setter>
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="15"/>
+                                    </Border.StrokeShape>
+                                    <Grid
+                                        Padding="10"
+                                        MinimumWidthRequest="150"
+                                        MaximumWidthRequest="150" 
+                                        HorizontalOptions="Center"
+                                        BackgroundColor="#98FFFFFF"
+                                        Margin="0, 0, 0, 0">
+                                        
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="120" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Border 
+                                            Grid.Row="0"
+                                            StrokeThickness="2"
+                                            WidthRequest="90"
+                                            HeightRequest="120"
+                                            VerticalOptions="Start"
+                                            HorizontalOptions="Center">
+                                            <Border.Stroke >
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                    <GradientStopCollection>
+                                                        <GradientStop Offset="0" Color="#054B53"/>
+                                                        <GradientStop Offset="0.25" Color="#3F8668"/>
+                                                        <GradientStop Offset="0.50" Color="#7CC57F"/>
+                                                        <GradientStop Offset="0.75" Color="#BED082"/>
+                                                        <GradientStop Offset="1" Color="#F7D984"/>
+                                                    </GradientStopCollection>
+                                                </LinearGradientBrush>
+                                            </Border.Stroke>
+
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="15"/>
+                                            </Border.StrokeShape>
+
+                                            <Image 
+                                                Grid.Row="0"
+                                                Source="{Binding default_image.small_url, FallbackValue='fallback.png'}"
+                                                MinimumHeightRequest="120"
+                                                MaximumHeightRequest="120"
+                                                MinimumWidthRequest="90"
+                                                MaximumWidthRequest="90"
+                                                Aspect="AspectFill"/>
+                                        </Border>
+                                        <Label
+                                            Grid.Row="1"
+                                            Text="{Binding common_name}"
+                                            FontFamily="bloomings"
+                                            FontSize="20"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="#054B53"/>
+
+                                        <ImageButton
+                                            Grid.Row="2"
+                                            Margin="0,5,0,0"
+                                            Source="minus.png"
+                                            MaximumHeightRequest="20"
+                                            MinimumHeightRequest="20"
+                                            VerticalOptions="End"
+                                            Clicked="OnDeleteButtonClicked">
+                                        </ImageButton>
+
+                                        <Label
+                                            Grid.Row="3"
+                                            x:Name="WateringMessageLabel"
+                                            Text="{Binding WateringMessage}"
+                                            FontFamily="futurabook"
+                                            FontSize="16"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            TextColor="#054B53"
+                                            Margin="0, 5, 0, 0">
+
+                                            <Label.Triggers>
+                                                <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="I need water!">
+                                                    <Setter Property="TextColor" Value="#DE1548" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="No watering information">
+                                                    <Setter Property="TextColor" Value="#3F8668" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="2 days before watering">
+                                                    <Setter Property="TextColor" Value="#3F8668" />
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Label" Binding="{Binding WateringMessage}" Value="1 day before watering">
+                                                    <Setter Property="TextColor" Value="#3F8668" />
+                                                </DataTrigger>
+                                            </Label.Triggers>
+                                        </Label>
+                                    </Grid>
+                                </Border>
+                                
+
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
 
                     <!--<ScrollView>
                         <ListView
