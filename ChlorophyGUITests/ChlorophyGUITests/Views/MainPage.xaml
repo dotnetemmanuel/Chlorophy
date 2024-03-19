@@ -24,7 +24,7 @@
                     HorizontalOptions="FillAndExpand">
                     <Image 
                         Grid.Column="0"
-                        Source="chlorophy_logo_svg.png"
+                        Source="chlorophy_logo.png"
                         HeightRequest="45"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"/>
@@ -34,14 +34,14 @@
                         x:Name="Chlorophy"
                         Text="Chlorophy"
                         TextColor="#054B53"
-                        FontSize="26"
+                        FontSize="{OnPlatform Android='27',WinUI='26'}"
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
                         Margin="20, 0, 0, 0"/>
 
                     <Border
-                        Padding="0,0,3,0"
+                        Padding="{OnPlatform Android='0,1,3,0', WinUI='0,0,3,0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="{OnPlatform Android= '1.5', WinUI='1.5'}"
@@ -109,7 +109,7 @@
                         x:Name="Welcome"    
                         BackgroundColor="#FFFFFF"
                         Margin="20, 20, 20, 0"
-                        HeightRequest="100"
+                        HeightRequest="{OnPlatform Android='110', WinUI='100'}"
                         VerticalOptions="Start"
                         BorderColor="Transparent"
                         IsVisible="True">
@@ -125,7 +125,7 @@
                                 Grid.Row="0"
                                 Text="{Binding WelcomeMessage}"
                                 TextColor="#054B53"
-                                FontSize="18"
+                                FontSize="{OnPlatform Android='24', WinUI='18'}"
                                 FontFamily="bloomings"
                                 VerticalOptions="Start"/>
 
@@ -134,7 +134,7 @@
                                 Grid.Row="1"
                                 Text="{Binding Suggestion}"
                                 TextColor="#054B53"
-                                FontSize="13"
+                                FontSize="{OnPlatform Android='14', WinUI='13'}"
                                 FontFamily="futurabook"
                                 VerticalOptions="End"/>
                         </Grid>
@@ -289,14 +289,16 @@
                                     </Border.StrokeShape>
                                     <Grid
                                         Padding="10"
-                                        MinimumWidthRequest="150"
-                                        MaximumWidthRequest="150" 
+                                        MinimumWidthRequest="200"
+                                        MaximumWidthRequest="200"
+                                        MinimumHeightRequest="250"
+                                        MaximumHeightRequest="250"
                                         HorizontalOptions="Center"
                                         BackgroundColor="#98FFFFFF"
                                         Margin="0, 0, 0, 0">
                                         
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="120" />
+                                            <RowDefinition Height="150" />
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
@@ -304,8 +306,8 @@
                                         <Border 
                                             Grid.Row="0"
                                             StrokeThickness="2"
-                                            WidthRequest="90"
-                                            HeightRequest="120"
+                                            WidthRequest="120"
+                                            HeightRequest="150"
                                             VerticalOptions="Start"
                                             HorizontalOptions="Center">
                                             <Border.Stroke >
@@ -327,10 +329,10 @@
                                             <Image 
                                                 Grid.Row="0"
                                                 Source="{Binding default_image.small_url, FallbackValue='fallback.png'}"
-                                                MinimumHeightRequest="120"
-                                                MaximumHeightRequest="120"
-                                                MinimumWidthRequest="90"
-                                                MaximumWidthRequest="90"
+                                                MinimumHeightRequest="150"
+                                                MaximumHeightRequest="150"
+                                                MinimumWidthRequest="120"
+                                                MaximumWidthRequest="120"
                                                 Aspect="AspectFill"/>
                                         </Border>
                                         <Label

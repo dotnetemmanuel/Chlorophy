@@ -25,7 +25,7 @@
                     
                     <Image 
                         Grid.Column="0"
-                        Source="chlorophy_logo_svg.png"
+                        Source="chlorophy_logo.png"
                         HeightRequest="45"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"/>
@@ -35,7 +35,7 @@
                         x:Name="Chlorophy"
                         Text="Chlorophy"
                         TextColor="#054B53"
-                        FontSize="26"
+                        FontSize="{OnPlatform Android='27',WinUI='26'}"
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"

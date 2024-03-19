@@ -19,7 +19,7 @@
                     
                     <Image 
                         Grid.Column="0"
-                        Source="chlorophy_logo_svg.png"
+                        Source="chlorophy_logo.png"
                         HeightRequest="45"
                         HorizontalOptions="Start"
                         VerticalOptions="Center"/>
@@ -29,7 +29,7 @@
                         x:Name="Chlorophy"
                         Text="Chlorophy"
                         TextColor="#054B53"
-                        FontSize="26"
+                        FontSize="{OnPlatform Android='27',WinUI='26'}"
                         FontFamily="bloomings"
                         VerticalOptions="Center"
                         HorizontalOptions="Start"
@@ -59,14 +59,14 @@
                         HorizontalOptions="Center"/>
 
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
                         
@@ -81,7 +81,7 @@
                             Placeholder="Email"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
@@ -93,14 +93,14 @@
                     </Border>
                     
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
     
@@ -115,7 +115,7 @@
                             Placeholder="Password"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
@@ -157,14 +157,14 @@
                         Margin="0,30,0,0"/>
 
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -179,7 +179,7 @@
                             Placeholder="Firstname"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"                            
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
@@ -191,14 +191,14 @@
                     </Border>
                     
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -213,7 +213,7 @@
                             Placeholder="Lastname"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
@@ -225,14 +225,14 @@
                     </Border>
                     
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -247,7 +247,7 @@
                             Placeholder="E-mail"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
@@ -259,14 +259,14 @@
                     </Border>
                     
                     <Border
-                        Padding="{OnPlatform Android='0,0,3,0', WinUI='0, 2, 3, 0'}"
+                        Padding="{OnPlatform Android='0,1,4,0', WinUI='0, 2, 3, 0'}"
                         Grid.Column="2"
                         Stroke="#3F8668"                        
                         StrokeThickness="1.5"
                         VerticalOptions="Center"
                         HorizontalOptions="Center"
                         BackgroundColor="#FFFFFF"
-                        HeightRequest="{OnPlatform Android='30', WinUI='35'}"
+                        HeightRequest="{OnPlatform Android='35', WinUI='35'}"
                         WidthRequest="210"
                         Margin="0,20,0,0">
 
@@ -281,7 +281,7 @@
                             Placeholder="Password"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
-                            FontSize="11"
+                            FontSize="{OnPlatform Android='12', WinUI='11'}"
                             FontFamily="futurabook"
                             TextColor="#383838"
                             VerticalTextAlignment="Start"
