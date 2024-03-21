@@ -77,7 +77,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="EmailSignIn"
-                            Text="emmanuel.duchene@gmail.com"
+                            Text=""
                             Placeholder="Email"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"
@@ -111,7 +111,7 @@
                         <Entry
                             Grid.Column="2"
                             x:Name="PasswordSignIn"
-                            Text="abc123"
+                            Text=""
                             Placeholder="Password"
                             PlaceholderColor="{OnPlatform Android='#9A9999', WinUI='#BFBFBF'}"
                             FontAttributes="{OnPlatform Android='Bold'}"

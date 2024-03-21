@@ -9,9 +9,23 @@ namespace ChlorophyGUITests
         public MainPage()
         {
             InitializeComponent();
+            Today = DateTime.Now;
+            var task = Task.Run(() => ReadWriteFile.ReadAll("LoggedInUser.txt"));
+            var currentUser = task.Result;
+            if (currentUser != null)
+            {
+                Views.UserPage.CurrentUser = currentUser;
+                Views.UserPage.SignedInUserEmail = currentUser.Email;
+            }
+            else
+            {
+                Views.UserPage.CurrentUser = currentUser;
+                Views.UserPage.SignedInUserEmail = null;
+            }
+            //ReadWriteFile.ReadAll("LoggedInUser.txt");
             BindingContext = new ViewModels.MainPageViewModel();
             HideWelcomeMessage();
-            Today = DateTime.Now;
+
         }
 
         public static string keyword = null;

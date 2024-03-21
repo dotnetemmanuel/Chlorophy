@@ -5,8 +5,8 @@ namespace ChlorophyGUITests.Views;
 
 public partial class UserPage : ContentPage
 {
-    public Models.User CurrentUser { get; set; }
-    public static string SignedInUserEmail { get; private set; }
+    public static Models.User CurrentUser { get; set; }
+    public static string? SignedInUserEmail { get; set; }
     public string firstName { get; set; }
     public string lastName { get; set; }
     public string email { get; set; }
@@ -99,6 +99,8 @@ public partial class UserPage : ContentPage
             SignedInUserEmail = existingUserEmail.Email;
             CurrentUser = existingUserEmail;
 
+            ReadWriteFile.WriteAll("LoggedInUser.txt", SignedInUserEmail);
+
             await Navigation.PushAsync(new UserPage());
         }
         else
@@ -111,6 +113,7 @@ public partial class UserPage : ContentPage
     private async void OnLogOutClicked(object sender, EventArgs e)
     {
         Views.UserPage.SignedInUserEmail = null;
+        ReadWriteFile.WriteAll("LoggedInUser.txt", SignedInUserEmail);
         await Navigation.PushAsync(new Views.UserPage());
     }
 }

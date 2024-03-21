@@ -36,7 +36,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
-		<BaseOutputPath>C:\Users\emman\GitHub\ChlorophyGUITests\ChlorophyGUITests\ChlorophyGUITests\bin</BaseOutputPath>
+		<BaseOutputPath>C:\Users\emman\GitHub\Chlorophy\ChlorophyGUITests\ChlorophyGUITests\bin</BaseOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -133,6 +133,10 @@
 	  <MauiXaml Update="Views\UserPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Files\" />
 	</ItemGroup>
 
 </Project>
