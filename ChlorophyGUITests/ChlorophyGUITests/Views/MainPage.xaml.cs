@@ -105,7 +105,7 @@ namespace ChlorophyGUITests
             {
                 var viewModel = new ViewModels.PlantDetailsPageViewModel();
                 viewModel.SetSpeciesId((int)species.id);
-                await viewModel.InitializeAPIAsync();
+                await viewModel.InitializeDbAsync();
 
                 var page = new Views.PlantDetailsPage();
                 page.BindingContext = viewModel;
